@@ -6,6 +6,7 @@
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
     "material-ui": "^1.0.0-beta.33",
+    "material-ui-icons": "^1.0.0-beta.17",
     "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
