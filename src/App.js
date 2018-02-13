@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './images/fruits.svg';
-import heroImage from './images/caroline-attwood-225496.jpg'
+import 'typeface-roboto'
 import './App.css';
+import heroImage from './images/caroline-attwood-225496.jpg'
 
 class App extends Component {
   render() {
