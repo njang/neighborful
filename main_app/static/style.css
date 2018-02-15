@@ -1,0 +1,31 @@
+{% load static %}
+
+body {
+    text-align: center;
+}
+
+/* The hero image */
+.hero-image {
+    /* The image used */
+    background: url("/static/images/elaine-casap-86020.jpg");
+    /*background: url("/static/images/elaine-casap-86020.jpg") 50% 0 no-repeat fixed;*/
+
+    /* Set a specific height */
+    height: 480px;
+    width: 100%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
