@@ -27,13 +27,13 @@ A 27 year old engineer who is an amateur gardener, living in Hyde Park neighborh
 
 2. Stephen Borne
 A 55 year old man who has been living in Austin his whole life. After recently having a heart attack, his doctor told him he has to start eating healthier or else. Stephen wants to get the freshest, local sourced vegetables and fruits possible.
-* As a user, he'd like to sort thru the marketplace to look for specific products
-* As a user, he'd like to see the different produce options available around him, more specifically on a map
+* As a user, he'd like to sort thru the marketplace to look for specific products.
+* As a user, he'd like to see the different produce options available around him, more specifically on a map.
 
 3. Sandy Lakes
 A community leader who has started many community gardens around the Austin area. She wants to find a way to get people not in the garden project to get involved and have access to locally grown produce.
-* As a user, she'd like to update the quantity of a specific produce item availability
-* As a user, she'd like to be able to delete the produce when its sold ou
+* As a user, she'd like to update the quantity of a specific produce item availability.
+* As a user, she'd like to be able to delete the produce when its sold out.
 * As a user, she'd like to input what produce is being sold and for how many tokens it's being sold for.
 
 
