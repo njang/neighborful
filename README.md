@@ -26,6 +26,9 @@ The Minimum Viable Product version of the Neighborful web app is a much simplifi
 
 ![](docs/neighborful-ERD.png)
 
+### Routes
+![](docs/routes.jpg)
+
 ## Learn more about the developers of Neighborful
 
 #### Tess Craig
