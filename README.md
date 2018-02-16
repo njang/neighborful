@@ -18,6 +18,7 @@ The Minimum Viable Product version of the Neighborful web app is a much simplifi
 
 ![](docs/wireframe01.png)
 ![](docs/wireframe02.png)
+![](docs/wireframe03.png)
 
 ### User Stories
 
