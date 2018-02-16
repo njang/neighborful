@@ -14,6 +14,11 @@ $ python3 manage.py runserver
 
 The Minimum Viable Product version of the Neighborful web app is a much simplified version of what the final app will be. What follows is the specs for the minimal viable product. A central Kanban board tracking development is located here on [Trello](https://trello.com/b/J1FgDYrT/neighborful). For the most up to date developments, take a quick look inside.
 
+### Wireframes
+
+![](docs/wireframe01.png)
+![](docs/wireframe02.png)
+
 ### User Stories
 
 ### Entity Relationship Diagram
