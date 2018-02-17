@@ -1,0 +1,15 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Neighborful</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    </head>
+    <body>
+        {% block content %}
+    	{% endblock %}
+        <hr />
+        <footer>All Rights Reserved, Neighborful 2018 | <a href='/about'>About</a></footer>
+    </body>
+</html>
