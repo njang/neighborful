@@ -1,7 +1,15 @@
-from django.urls import include, path
-from .views import index, about
+from django.conf.urls import url
+from .views import index, about, show, profile, sell_form, post_produce, dashboard, marketplace, login_view, logout_view
 
 urlpatterns = [
-    path(r'', index),
-    path(r'about/', about),
+    url(r'^$', index),
+    url(r'^about/$', about),
+    url(r'^dashboard/$', dashboard),
+    url(r'^user/(\w+)/$', profile, name='profile'),
+    url(r'^marketplace/$', marketplace, name='marketplace'),
+    url(r'^([0-9]+)/$', show, name="show"),
+    url(r'^sell/$', sell_form),
+    url(r'^sell/post_url/$', post_produce, name='post_produce'),
+	url(r'^login/$', login_view, name="login"),
+	url(r'^logout/$', logout_view, name="logout"),
 ]
