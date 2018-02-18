@@ -7,6 +7,5 @@ class Produce(models.Model):
     quantity = models.IntegerField(default=0)
     location = models.CharField(max_length=100)
     # user = models.ForeignKey(User, on_delete=models.PROTECT)
-
-    def __stf__(self):
+    def __str__(self):
     	return self.name

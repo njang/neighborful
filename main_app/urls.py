@@ -1,5 +1,5 @@
 from django.urls import include, path
-from .views import index, about, marketplace
+from .views import index, about, sell, marketplace
 
 urlpatterns = [
     path(r'', index),
