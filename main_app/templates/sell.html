@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1>Sell</h1>
+
+<form action="post_url/" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Sell" />
+</form>
+{% endblock %}
+
