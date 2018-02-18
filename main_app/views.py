@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .models import Produce
-from .form import ProduceForm
+from .form import ProduceForm, LoginForm
 
 # Create your views here.
 def index(request):

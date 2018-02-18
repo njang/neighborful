@@ -5,6 +5,9 @@
 
 <h1>{{ username }}'s profile:</h1>
 
+<a href='/sell'><button>Sell</button></a>
+<a href='/marketplace'><button>Buy</button></a>
+
 <h2>Currently selling</h2>
 {% for produce in produces %}
 <a href="/{{produce.id}}">
