@@ -16,7 +16,7 @@
 		<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
 		<td>{{ produce.price }}</td>
 		<td>{{ produce.quantity }}</td>
-		<td><a href='/user/{{ produce.user.username }}'>{{ produce.user.username }}</a></td>
+		<td><a href='/user/{{ produce.user.username }}'>{{ produce.user.first_name }}</a></td>
 	</tr>
 	{% endfor %}
 </table>
