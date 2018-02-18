@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import index, about, show, profile, sell_form, post_produce, dashboard, marketplace
+from .views import index, about, show, profile, sell_form, post_produce, dashboard, marketplace, login_view, logout_view
 
 urlpatterns = [
     url(r'^$', index),
@@ -10,4 +10,6 @@ urlpatterns = [
     url(r'^([0-9]+)/$', show, name="show"),
     url(r'^sell/$', sell_form),
     url(r'^sell/post_url/$', post_produce, name='post_produce'),
+	url(r'^login/$', login_view, name="login"),
+	url(r'^logout/$', logout_view, name="logout"),
 ]
