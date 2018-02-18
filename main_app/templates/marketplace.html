@@ -4,7 +4,7 @@
 {% block content %}
 <h1>Marketplace</h1>
 
-<table>
+<table style='margin: auto;'>
 	<tr>
 		<th>Name</th>
 		<th>Price</th>
@@ -13,14 +13,13 @@
 	</tr>
 	{% for produce in produces %}
 	<tr>
-		<td>{{ produce.name }}</td>
+		<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
 		<td>{{ produce.price }}</td>
 		<td>{{ produce.quantity }}</td>
-		<td><a href="/user/{{ produce.user.username }}">{{ produce.user.username }}</a></td>
+		<td><a href='/user/{{ produce.user.username }}'>{{ produce.user.username }}</a></td>
 	</tr>
 	{% endfor %}
 </table>
-<hr />
 
 {% endblock %}
 
