@@ -9,9 +9,6 @@ from .form import ProduceForm, LoginForm
 def index(request):
 	return render(request, 'index.html')
 
-def dashboard(request):
-    return render(request, 'dashboard.html')
-
 def marketplace(request):
 	produces = Produce.objects.all()
 	return render(request, 'marketplace.html', {'produces': produces})
