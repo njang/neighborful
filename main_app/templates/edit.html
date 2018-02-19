@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1>Edit</h1>
+
+<form action="update/" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Update" />
+</form>
+<a href='/{{produce.id}}'><button>Cancel</button></a>
+{% endblock %}
+
