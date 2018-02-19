@@ -40,7 +40,7 @@ def post_produce(request):
 def edit_form(request, produce_id):
     produce = Produce.objects.get(id=produce_id)
     form = ProduceForm({'name': produce.name, 'price': produce.price, 'quantity': produce.quantity, 'user':produce.seller})
-    return render(request, 'edit.html', {'form': form})
+    return render(request, 'edit.html', {'form': form, 'produce':produce})
 
 def update_produce(request, produce_id):
     form = ProduceForm(request.POST)
