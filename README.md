@@ -9,6 +9,7 @@ Web demo: ([link](https://neighborful-demo.herokuapp.com/))
 ```
 $ git clone <this repo>
 $ cd Neighborful
+$ pipenv install
 $ python3 manage.py runserver
 ```
 
