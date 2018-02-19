@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
-from django.views.generic.edit import UpdateView
 from django.contrib.auth.models import User
 from .models import Produce
 from .forms import ProduceForm, LoginForm
@@ -35,13 +34,16 @@ def post_produce(request):
 
 def edit_form(request, produce_id):
     produce = Produce.objects.get(id=produce_id)
-    form = ProduceForm({'name': produce.name, 'price': produce.price, 'quantity': produce.quantity, 'user':produce.user})
+    form = ProduceForm({'name': produce.name, 'price': produce.price, 'quantity': produce.quantity, 'user':produce.seller})
     return render(request, 'edit.html', {'form': form})
 
 def update_produce(request, produce_id):
     form = ProduceForm(request.POST)
     if form.is_valid():
-        form.save(commit = True)
+        produce = form.save(commit = False)
+        produce.id = produce_id
+        produce.seller = request.user
+        produce.save()
     return HttpResponseRedirect('/marketplace')
 
 def profile(request, username):
