@@ -51,6 +51,15 @@ def update_produce(request, produce_id):
         produce.save()
     return HttpResponseRedirect('/marketplace')
 
+def buy_produce(request, produce_id):
+    form = ProduceForm(request.POST)
+    if form.is_valid():
+        produce = form.save(commit = False)
+        produce.id = produce_id
+        produce.buyer = request.user
+        produce.save()
+    return HttpResponseRedirect('/marketplace')
+
 def profile(request, username):
     user = User.objects.get(username=username)
     produces = Produce.objects.filter(seller=user)

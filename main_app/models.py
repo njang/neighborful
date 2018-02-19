@@ -5,7 +5,8 @@ class Produce(models.Model):
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.IntegerField(default=0)
-    seller = models.ForeignKey(User, on_delete=models.PROTECT)
+    seller = models.ForeignKey(User, on_delete=models.PROTECT, related_name='seller')
+    # buyer = models.ForeignKey(User, on_delete=models.PROTECT, related_name='buyer')
     buyer = models.CharField(max_length=100)
     
     def __str__(self):
