@@ -9,9 +9,6 @@ from .form import ProduceForm, LoginForm
 def index(request):
 	return render(request, 'index.html')
 
-def dashboard(request):
-    return render(request, 'dashboard.html')
-
 def marketplace(request):
 	produces = Produce.objects.all()
 	return render(request, 'marketplace.html', {'produces': produces})
@@ -38,7 +35,7 @@ def post_produce(request):
 def profile(request, username):
     user = User.objects.get(username=username)
     produces = Produce.objects.filter(user=user)
-    return render(request, 'profile.html', {'username': username, 'produces': produces})
+    return render(request, 'profile.html', {'user': user, 'produces': produces})
 
 def login_view(request):
     if request.method == 'POST':
