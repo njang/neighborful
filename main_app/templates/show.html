@@ -4,6 +4,10 @@
     <h2>{{ produce.name}}</h1>
     <p>Price: {{ produce.price }}</p>
     <p>Quantity: {{ produce.quantity }}</p>
-    <p>Seller: <a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a></p>
-	<a href='/edit/{{produce.id}}'><button>Edit</button></a>
+    <p>{% if produce.seller == user %}
+    	<a href='/edit/{{produce.id}}'><button>Edit</button></a>
+    	{% else %}
+    	Seller: {{ produce.seller.first_name }}
+    	{% endif %}
+	</p>
 {% endblock %}
