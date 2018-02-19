@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-    <h2> Name: {{ produce.name}}</h1>
-    <p> Price: {{ produce.price }}</p>
-    <p> Quantity: {{ produce.quantity }}</p>
-    <p> Location: {{ produce.location }}</p>
-    <hr />
+    <h2>{{ produce.name}}</h1>
+    <p>Price: {{ produce.price }}</p>
+    <p>Quantity: {{ produce.quantity }}</p>
+    <p>Seller: <a href='/user/{{ produce.user.username }}'>{{ produce.user.first_name }}</a></p>
 {% endblock %}
