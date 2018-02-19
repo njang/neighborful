@@ -6,6 +6,7 @@
     <p>Quantity: {{ produce.quantity }}</p>
     <p>{% if produce.seller == user %}
     	<a href='/edit/{{produce.id}}'><button>Edit</button></a>
+    	<a href='/delete/{{produce.id}}'><button>Delete</button></a>
     	{% else %}
     	Seller: {{ produce.seller.first_name }}
     	{% endif %}

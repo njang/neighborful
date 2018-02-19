@@ -24,6 +24,10 @@ def sell_form(request):
     form = ProduceForm()
     return render(request, 'sell.html', {'form': form})
 
+def delete_post(request, produce_id):
+    Produce.objects.get(id=produce_id).delete()
+    return HttpResponseRedirect('/marketplace')
+
 def post_produce(request):
     form = ProduceForm(request.POST)
     if form.is_valid():
