@@ -4,15 +4,22 @@
 {% block content %}
 <h1>Marketplace</h1>
 
-{% for produce in produces %}
-  <p>Name: {{ produce.name }}</p>
-  <p>Price: {{ produce.price }}</p>
-  <p>Location: {{ produce.location }}</p>
-  <a href="/user/{{ produce.user.username }}"
-      <p>Seller: {{ produce.user.username }}</p>
-    </a>
-  <hr />
-{% endfor %}
+<table style='margin: auto;'>
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th>Seller</th>
+	</tr>
+	{% for produce in produces %}
+	<tr>
+		<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
+		<td>{{ produce.price }}</td>
+		<td>{{ produce.quantity }}</td>
+		<td><a href='/user/{{ produce.user.username }}'>{{ produce.user.first_name }}</a></td>
+	</tr>
+	{% endfor %}
+</table>
 
 {% endblock %}
 
