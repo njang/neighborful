@@ -24,6 +24,10 @@ def sell_form(request):
     form = ProduceForm()
     return render(request, 'sell.html', {'form': form})
 
+def delete_post(request, produce_id):
+    Produce.objects.get(id=produce_id).delete()
+    return HttpResponseRedirect('/marketplace')
+
 def post_produce(request):
     form = ProduceForm(request.POST)
     if form.is_valid():
@@ -36,7 +40,7 @@ def post_produce(request):
 def edit_form(request, produce_id):
     produce = Produce.objects.get(id=produce_id)
     form = ProduceForm({'name': produce.name, 'price': produce.price, 'quantity': produce.quantity, 'user':produce.seller})
-    return render(request, 'edit.html', {'form': form})
+    return render(request, 'edit.html', {'form': form, 'produce':produce})
 
 def update_produce(request, produce_id):
     form = ProduceForm(request.POST)
@@ -44,6 +48,15 @@ def update_produce(request, produce_id):
         produce = form.save(commit = False)
         produce.id = produce_id
         produce.seller = request.user
+        produce.save()
+    return HttpResponseRedirect('/marketplace')
+
+def buy_produce(request, produce_id):
+    form = ProduceForm(request.POST)
+    if form.is_valid():
+        produce = form.save(commit = False)
+        produce.id = produce_id
+        produce.buyer = request.user
         produce.save()
     return HttpResponseRedirect('/marketplace')
 
