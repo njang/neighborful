@@ -4,6 +4,6 @@
     <h2>{{ produce.name}}</h1>
     <p>Price: {{ produce.price }}</p>
     <p>Quantity: {{ produce.quantity }}</p>
-    <p>Seller: <a href='/user/{{ produce.user.username }}'>{{ produce.user.first_name }}</a></p>
+    <p>Seller: <a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a></p>
 	<a href='/edit/{{produce.id}}'><button>Edit</button></a>
 {% endblock %}

@@ -29,18 +29,24 @@ def post_produce(request):
     form = ProduceForm(request.POST)
     if form.is_valid():
         produce = form.save(commit = False)
-        produce.user = request.user
+        produce.seller = request.user
         produce.save()
     return HttpResponseRedirect('/marketplace')
 
 def edit_form(request, produce_id):
     produce = Produce.objects.get(id=produce_id)
-    form = ProduceForm({'name': produce.name, 'price': produce.price, 'quantity': produce.quantity})
+    form = ProduceForm({'name': produce.name, 'price': produce.price, 'quantity': produce.quantity, 'user':produce.user})
     return render(request, 'edit.html', {'form': form})
+
+def update_produce(request, produce_id):
+    form = ProduceForm(request.POST)
+    if form.is_valid():
+        form.save(commit = True)
+    return HttpResponseRedirect('/marketplace')
 
 def profile(request, username):
     user = User.objects.get(username=username)
-    produces = Produce.objects.filter(user=user)
+    produces = Produce.objects.filter(seller=user)
     return render(request, 'profile.html', {'user': user, 'produces': produces})
 
 def login_view(request):
