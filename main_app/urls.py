@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^sell/$', sell_form),									# display a sales template for a produce
     url(r'^edit/([0-9]+)/$', edit_form, name='edit'),			# display a single produce by id
     url(r'^sell/post_url/$', post_produce, name='post_produce'),# route to post a new produce up for sale
-    url(r'^edit/([0-9]+)/post_url/$', update_produce, name='edit'),  # edit a single produce by id
+    url(r'^edit/([0-9]+)/update/$', update_produce, name='edit'),  # edit a single produce by id
     url(r'^delete/([0-9]+)/$', delete_post, name='delete'),  # delete a single produce by id
 	url(r'^login/$', login_view, name='login'),		# display login page
 	url(r'^logout/$', logout_view, name='logout'),	# route to logout
