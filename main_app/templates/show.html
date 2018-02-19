@@ -4,11 +4,11 @@
     <h2>{{ produce.name}}</h1>
     <p>Price: {{ produce.price }}</p>
     <p>Quantity: {{ produce.quantity }}</p>
-    <p>{% if produce.seller == user %}
-    	<a href='/edit/{{produce.id}}'><button>Edit</button></a>
-    	<a href='/delete/{{produce.id}}'><button>Delete</button></a>
-    	{% else %}
-    	Seller: {{ produce.seller.first_name }}
-    	{% endif %}
-	</p>
+    {% if produce.seller == user %}
+    	<p><a href='/edit/{{produce.id}}'><button>Edit</button></a></p>
+    	<p><a href='/delete/{{produce.id}}'><button>Delete</button></a></p>
+	{% else %}
+    	<p>Seller: {{ produce.seller.first_name }}</p>
+        <p><button onclick="JavaScript:alert('Buy function will be enabed soon!')">Buy</button></p>
+	{% endif %}
 {% endblock %}
