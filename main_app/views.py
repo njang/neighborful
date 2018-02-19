@@ -29,6 +29,7 @@ def post_produce(request):
     if form.is_valid():
         produce = form.save(commit = False)
         produce.seller = request.user
+        produce.buyer = ''
         produce.save()
     return HttpResponseRedirect('/marketplace')
 
