@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
+from django.views.generic.edit import UpdateView
 from django.contrib.auth.models import User
 from .models import Produce
-from .form import ProduceForm, LoginForm
+from .forms import ProduceForm, LoginForm
 
 # Create your views here.
 def index(request):
@@ -31,6 +32,11 @@ def post_produce(request):
         produce.user = request.user
         produce.save()
     return HttpResponseRedirect('/marketplace')
+
+def edit_form(request, produce_id):
+    produce = Produce.objects.get(id=produce_id)
+    form = ProduceForm({'name': produce.name, 'price': produce.price, 'quantity': produce.quantity})
+    return render(request, 'edit.html', {'form': form})
 
 def profile(request, username):
     user = User.objects.get(username=username)

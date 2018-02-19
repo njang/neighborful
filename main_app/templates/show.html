@@ -5,4 +5,5 @@
     <p>Price: {{ produce.price }}</p>
     <p>Quantity: {{ produce.quantity }}</p>
     <p>Seller: <a href='/user/{{ produce.user.username }}'>{{ produce.user.first_name }}</a></p>
+	<a href='/edit/{{produce.id}}'><button>Edit</button></a>
 {% endblock %}
