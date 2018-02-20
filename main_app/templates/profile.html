@@ -3,9 +3,8 @@
 
 {% block content %}
 <div class="container-fluid">
-{% include "./header.html" %}
-    </div>
-    <h1>{{ user.first_name }}'s profile:</h1>
+  {% include "./header.html" %}
+  <h1>{{ user.first_name }}'s profile:</h1>
     <div class="row justify-content-center">
 		    <a href='/sell'><button class="col-md-12">Sell Produce</button></a>
     </div>

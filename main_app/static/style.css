@@ -49,38 +49,15 @@ body {
 }
 
 #fontAwesome {
-  border: red 2px solid;
   font-size: 50px;
 }
 
-#header {
-  border: black 2px solid;
-}
-
-#profileHeader {
-  border: purple 2px solid;
-}
-
 #username {
-  border: purple 2px solid;
   display: flex;
   flex-direction: column;
-}
-
-#navBar {
-  border: black 2px solid;
 }
 
 #nav {
-  border: black 2px solid;
   display: flex;
   flex-direction: column;
-}
-
-#user {
-  border: red 2px solid;
-}
-
-#empty {
-  border: red 2px solid;
 }
