@@ -3,17 +3,22 @@
 
 {% block content %}
 
-<h1>{{ user.first_name }}'s profile:</h1>
+{% if user.is_authenticated != true%}
+	<p>Please log in</p>
 
-<a href='/sell'><button>Sell</button></a>
-<a href='/marketplace'><button>Buy</button></a>
+{% else %}
+	<h1>{{ user.first_name }}'s profile:</h1>
 
-<h2>Currently selling</h2>
-{% for produce in produces %}
-<a href="/{{produce.id}}">
-  <h3>{{ produce.name }}</h3>
-</a>
+	<a href='/sell'><button>Sell</button></a>
+	<a href='/marketplace'><button>Buy</button></a>
 
-{% endfor %}
+	<h2>Currently selling</h2>
+	{% for produce in produces %}
+	<a href="/{{produce.id}}">
+	  <h3>{{ produce.name }}</h3>
+	</a>
+	{% endfor %}
+
+{% endif %}
 
 {% endblock %}
