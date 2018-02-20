@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+{% include "./header.html" %}
+    <h2 style="text-decoration: underline">Search Results:</h1>
+
+
+  {% for obj in object_list %}
+<div class="row">
+  <div class="col-sm-12">
+      <div class="caption">
+        <h3>{{ obj.name }}</h3>
+        {% if obj.price %}<p>Price: {{ obj.price }}</p>{% endif %}
+        {% if obj.quantity %}<p>Quantity: {{ obj.quantity }}</p>{% endif %}
+        {% if obj.seller %}<p>Seller: {{ obj.seller.first_name }}</p>{% endif %}
+
+        <p><a href='/{{ obj.id }}' class="btn btn-primary" role="button"> View</a></p>
+      </div>
+    </div>
+  </div>
+<hr/>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}

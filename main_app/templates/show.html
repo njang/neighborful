@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+
 {% block content %}
+{% include "./header.html" %}
     <h2>{{ produce.name}}</h1>
     <p>Price: {{ produce.price }}</p>
     <p>Quantity: {{ produce.quantity }}</p>

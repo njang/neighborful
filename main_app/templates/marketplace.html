@@ -4,14 +4,16 @@
 {% block content %}
 {% include "./header.html" %}
 <div class="container">
-	<div class="row">
+	<div style="text-align: center";>
 		<h1>Marketplace</h1>
-		<form method="GET" action="">
-			<input type= "text" name="q" placeholder="Search here..."/>
-			<input type="submit" value="search"/>
+
+		<form method="GET" action="/search">
+			<input type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
+			<Button type="submit" value="search" class="btn btn-primary">Search!</button>
 		</form>
 	</div>
 	<!-- Neo code prevents tbl from showing, thats why table rows 2 - 6 are above 1 -->
+		<br>
 	<table style='margin: auto;' class="mTbl">
 		<thead>
 			<tr>
@@ -54,7 +56,8 @@
 			</tr>
 			{% for produce in produces %}
 			<tr class="mTblRow1">
-					<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
+					<td><a href='/{{ produce.id }} '>{{ produce.name }}</a></td>
+
 					<td>{{ produce.price }}</td>
 					<td>{{ produce.quantity }}</td>
 					<td>
@@ -63,8 +66,11 @@
 						{% else %}
 							{{ produce.seller.first_name }}
 						{% endif %}
+
 					</td>
 			</tr>
+
+
 			{% endfor %}
 		</tbody>
 	</table>
