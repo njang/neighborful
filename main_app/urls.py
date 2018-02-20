@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import index, about, show, profile, sell_form, edit_form, post_produce, update_produce, delete_post, marketplace, login_view, logout_view, sellOrBuy
+from .views import index, about, show, profile, sell_form, edit_form, post_produce, update_produce, delete_post, marketplace, login_view, logout_view
 
 urlpatterns = [
     url(r'^$', index),					# to main landing page
@@ -14,5 +14,4 @@ urlpatterns = [
     url(r'^delete/([0-9]+)/$', delete_post, name='delete'),  # delete a single produce by id
 	url(r'^login/$', login_view, name='login'),		# display login page
 	url(r'^logout/$', logout_view, name='logout'),	# route to logout
-    url(r'^sellOrBuy/$', sellOrBuy, name='sellOrBuy'),	# route to logout
 ]

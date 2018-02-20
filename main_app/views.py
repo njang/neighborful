@@ -88,6 +88,3 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
-
-def sellOrBuy(request):
-	return render(request, 'sellOrBuy.html')
