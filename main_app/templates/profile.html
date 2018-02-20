@@ -5,31 +5,31 @@
 <div class="container-fluid">
   {% include "./header.html" %}
   <h1>{{ user.first_name }}'s profile:</h1>
-    <div class="row justify-content-center">
-		    <a href='/sell'><button class="col-md-12">Sell Produce</button></a>
-    </div>
-    <div class="row justify-content-center">
-		    <a href='/marketplace'><button class="col-md-12">Buy Produce</button></a>
-    </div>
-    <h2 class="profileBalance">My Balance: 100</h2>
-    <h3>Currently selling</h3>
-    <div class="row justify-content-center">
+  <div class="row justify-content-center">
+	   <a href='/sell'><button class="col-md-12">Sell Produce</button></a>
+  </div>
+  <div class="row justify-content-center">
+		 <a href='/marketplace'><button class="col-md-12">Buy Produce</button></a>
+  </div>
+  <h2 class="profileBalance">My Balance: 100</h2>
+  <h3>Currently selling</h3>
+  <div class="row justify-content-center">
 		<table class="col-md-8 col-s-1" id="profileTbl">
-	        <thead>
-				<th>Produce</th>
-				<th>Available</th>
-				<th>Credit</th>
-	        </thead>
-	        <tbody>
-	            {% for produce in produces %}
-	            	<tr>
-						<td><a href="/{{produce.id}}">{{ produce.name }}</a></td>
-						<td>{{ produce.price }}</td>
-						<td>{{ produce.quantity }}</td>
-	            	</tr>
+	     <thead>
+         <th>Produce</th>
+				 <th>Available</th>
+				 <th>Credit</th>
+	     </thead>
+	     <tbody>
+	       {% for produce in produces %}
+	       <tr>
+           <td><a href="/{{produce.id}}">{{ produce.name }}</a></td>
+           <td>{{ produce.price }}</td>
+           <td>{{ produce.quantity }}</td>
+	       </tr>
 				{% endfor %}
-	        </tbody>
-      </table>
+	     </tbody>
+    </table>
   </div>
 </div>
 <!--TC WIP footer showing above table? -->
