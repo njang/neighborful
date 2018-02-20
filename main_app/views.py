@@ -21,7 +21,7 @@ def about(request):
 
 def show(request, produce_id):
     produce = Produce.objects.get(id=produce_id)
-    return render(request, 'show.html', {'produce': produce}) 
+    return render(request, 'show.html', {'produce': produce})
 
 def sell_form(request):
     form = ProduceForm()

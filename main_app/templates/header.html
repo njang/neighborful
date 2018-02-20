@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>Neighborful</h1>
+    <a href='/about'>About</a> | <a href='/'>Home</a> |
+    <a href='/marketplace'>Marketplace</a> | <a href='/sell'>Sell</a> |
+    {% if user.is_authenticated %}
+        <a  href="{% url 'profile' user.username %}">Hello, {{ user.first_name }}!</a> |
+        <a  href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <a  href="{% url 'login' %}">Login</a>
+    {% endif %}
+    <hr />
+{% endblock %}
