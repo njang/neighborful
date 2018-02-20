@@ -3,10 +3,10 @@
 
 {% block content %}
 
-{% if user.is_authenticated != true%}
+<!-- {% if user.is_authenticated == false %}
 	<p>Please log in</p>
 
-{% else %}
+{% else %} -->
 	<h1>{{ user.first_name }}'s profile:</h1>
 
 	<a href='/sell'><button>Sell</button></a>
@@ -19,6 +19,6 @@
 	</a>
 	{% endfor %}
 
-{% endif %}
+<!-- {% endif %} -->
 
 {% endblock %}
