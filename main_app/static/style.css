@@ -30,7 +30,7 @@ body {
     color: white;
 }
 
-.profileTbl {
+#profileTbl {
   color: red;
   border: black 2px solid;
 }
