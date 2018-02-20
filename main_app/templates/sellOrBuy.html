@@ -3,7 +3,13 @@
 
 {% block content %}
 {% include "./header.html" %}
-<button>Sell Produce</button>
-<button>Buy Produce</button>
+<div class="container">
+  <div class="row">
+    <button class="col-md-4">Sell Produce</button>
+  </div>
+  <div class="row">
+    <button class="col-md-4">Buy Produce</button>
+  </div>
+</div>
 {% include "./footer.html" %}
 {% endblock %}
