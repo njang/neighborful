@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block content %}
-
+{% include "./header.html" %}
 <h1>{{ user.first_name }}'s profile:</h1>
 
 <a href='/sell'><button>Sell</button></a>
@@ -36,6 +36,7 @@
 <!--  -->
   </tbody>
 </table>
-{% endfor %}
 
+{% endfor %}
+{% include "./footer.html" %}
 {% endblock %}

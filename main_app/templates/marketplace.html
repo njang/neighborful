@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 {% block content %}
+{% include "./header.html" %}
 <h1>Marketplace</h1>
 <button>Sort by</button>
 <!-- Neo code prevents tbl from showing, thats why table rows 2 - 6 are above 1 -->
@@ -61,5 +62,5 @@
 		{% endfor %}
 	</tbody>
 </table>
-
+{% include "./footer.html" %}
 {% endblock %}

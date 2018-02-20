@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 {% block content %}
+{% include "./header.html" %}
 <h1>Sell</h1>
 
 <form action="post_url/" method="post">
@@ -9,5 +10,5 @@
 	{{ form.as_p }}
 	<input type="submit" value="Sell" />
 </form>
+{% include "./footer.html" %}
 {% endblock %}
-
