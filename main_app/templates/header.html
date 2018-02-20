@@ -2,14 +2,28 @@
 {% load staticfiles %}
 
 {% block content %}
-    <h1>Neighborful</h1>
-    <a href='/about'>About</a> | <a href='/'>Home</a> |
-    <a href='/marketplace'>Marketplace</a> | 
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <h1 class="col-10 offset-md-1">Neighborful</h1>
     {% if user.is_authenticated %}
-        <a  href="{% url 'profile' user.username %}">Hello, {{ user.first_name }}!</a> |
-        <a  href="{% url 'logout' %}">Logout</a>
+        <i class="far fa-user-circle col-1" id="fontAwesome"></i>
+  </div>
+  <div>
+  <div class="row justify-content-center">
+    <div id="navBar" class="col-5">
+        <a href='/about'>About</a> | <a href='/'>Home</a> |
+        <a href='/marketplace'>Marketplace</a> |
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+    <div class="row justify-content-end">
+        <a class="col-md-auto" id="username" href="{% url 'profile' user.username %}">Hello, {{ user.first_name }}!</a>
+    </div>
     {% else %}
+        <a href='/about'>About</a> | <a href='/'>Home</a> |
+        <a href='/marketplace'>Marketplace</a> |
         <a  href="{% url 'login' %}">Login</a>
     {% endif %}
     <hr />
+</div>
 {% endblock %}
