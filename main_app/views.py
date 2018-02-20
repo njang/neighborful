@@ -18,7 +18,7 @@ def about(request):
 
 def show(request, produce_id):
     produce = Produce.objects.get(id=produce_id)
-    return render(request, 'show.html', {'produce': produce}) 
+    return render(request, 'show.html', {'produce': produce})
 
 def sell_form(request):
     form = ProduceForm()
@@ -88,3 +88,6 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+def sellOrBuy(request):
+	return render(request, 'sellOrBuy.html')
