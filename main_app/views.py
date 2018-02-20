@@ -11,6 +11,13 @@ def index(request):
 
 def marketplace(request):
 	produces = Produce.objects.all()
+	queryset_list = Produce.objects.all()
+	if request.user.is_staff or request.user.is_superuser:
+		queryset_list = Produce.objects.all()
+	query = request.GET.get("q")
+	if query:
+		queryset_list = queryset_list.filter(name__icontains=query)
+
 	return render(request, 'marketplace.html', {'produces': produces})
 
 def maps(request):
