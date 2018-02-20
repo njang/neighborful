@@ -6,67 +6,37 @@
 <div class="container">
     <h1>{{ user.first_name }}'s profile:</h1>
     <div class="row justify-content-center">
-      <a href='/sell'><button class="col-md-12">Sell Produce</button></a>
+		<a href='/sell'><button class="col-md-12">Sell Produce</button></a>
     </div>
     <div class="row justify-content-center">
-      <a href='/marketplace'><button class="col-md-12">Buy Produce</button></a>
+		<a href='/marketplace'><button class="col-md-12">Buy Produce</button></a>
     </div>
     <h2 class="profileBalance">My Balance: 100</h2>
     <h3>Currently selling</h3>
     <div class="row">
-      <table class="col-md-8 col-s-1" id="profileTbl">
-        <thead>
-          <tr>
-            <td>Produce</td>
-            <td>Available</td>
-            <td>Credit</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tomatoes</td>
-            <td>12 oz</td>
-            <td>3.0</td>
-          </tr>
-          <tr>
-            <td>Lettuce</td>
-            <td>5 oz</td>
-            <td>2.0</td>
-          </tr>
-      <!-- Neo Code  -->
-            {% for produce in produces %}
-            <a href="/{{produce.id}}">
-              <h4>{{ produce.name }}</h4>
-            </a>
-      <!--  -->
-        </tbody>
+		<table class="col-md-8 col-s-1" id="profileTbl">
+	        <thead>
+				<td>Produce</td>
+				<td>Available</td>
+				<td>Credit</td>
+	        </thead>
+	        <tbody>
+	            {% for produce in produces %}
+	            	<tr>
+						<td><a href="/{{produce.id}}">{{ produce.name }}</a></td>
+						<td>{{ produce.price }}</td>
+						<td>{{ produce.quantity }}</td>
+	            	</tr>
+				{% endfor %}
+	        </tbody>
       </table>
   </div>
 </div>
 <!--TC WIP footer showing above table? -->
-{% endfor %}
 {% include "./footer.html" %}
 {% endblock %}
 
 
 
-<!-- {% if user.is_authenticated == false %}
-	<p>Please log in</p>
 
-{% else %}
-	<h1>{{ user.first_name }}'s profile:</h1>
-
-	<a href='/sell'><button>Sell</button></a>
-	<a href='/marketplace'><button>Buy</button></a>
-
-	<h2>Currently selling</h2>
-	{% for produce in produces %}
-	<a href="/{{produce.id}}">
-	  <h3>{{ produce.name }}</h3>
-	</a>
-	{% endfor %}
-
-{% endif %}
-
-{% endblock %}-->
 
