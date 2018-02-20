@@ -13,6 +13,9 @@ def marketplace(request):
 	produces = Produce.objects.all()
 	return render(request, 'marketplace.html', {'produces': produces})
 
+def maps(request):
+    return render(request, 'maps.html')
+
 def about(request):
 	return render(request, 'about.html')
 
