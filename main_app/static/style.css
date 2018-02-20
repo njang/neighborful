@@ -63,8 +63,24 @@ body {
 
 #username {
   border: purple 2px solid;
+  display: flex;
+  flex-direction: column;
 }
 
 #navBar {
   border: black 2px solid;
+}
+
+#nav {
+  border: black 2px solid;
+  display: flex;
+  flex-direction: column;
+}
+
+#user {
+  border: red 2px solid;
+}
+
+#empty {
+  border: red 2px solid;
 }

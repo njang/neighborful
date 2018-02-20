@@ -3,26 +3,43 @@
 
 {% block content %}
 <div class="container-fluid">
-  <div class="row justify-content-center">
-    <h1 class="col-10 offset-md-1">Neighborful</h1>
     {% if user.is_authenticated %}
-        <i class="far fa-user-circle col-1" id="fontAwesome"></i>
-  </div>
-  <div>
-  <div class="row justify-content-center">
-    <div id="navBar" class="col-5">
+    <div class="row">
+      <div id="empty" class="col-3">
+      </div>
+      <div id="nav" class="col-6">
+      <h1>Neighborful</h1>
+      <div>
         <a href='/about'>About</a> | <a href='/'>Home</a> |
-        <a href='/marketplace'>Marketplace</a> |
-        <a href="{% url 'logout' %}">Logout</a>
+        <a href='/marketplace'>Marketplace</a>
+      </div>
+    </div>
+    <div id="empty" class="col-1">
+    </div>
+    <div id="username" class="col-2">
+        <i class="far fa-user-circle" id="fontAwesome"></i>
+      <a class="col-md-auto" id="user" href="{% url 'profile' user.username %}">Hello, {{ user.first_name }}!</a>
+      <a href="{% url 'logout' %}">Logout</a>
     </div>
   </div>
-    <div class="row justify-content-end">
-        <a class="col-md-auto" id="username" href="{% url 'profile' user.username %}">Hello, {{ user.first_name }}!</a>
-    </div>
     {% else %}
-        <a href='/about'>About</a> | <a href='/'>Home</a> |
-        <a href='/marketplace'>Marketplace</a> |
-        <a  href="{% url 'login' %}">Login</a>
+    <div class="row">
+      <div id="empty" class="col-3">
+      </div>
+      <div id="nav" class="col-6">
+      <h1>Neighborful</h1>
+        <div>
+          <a href='/about'>About</a> | <a href='/'>Home</a> |
+          <a href='/marketplace'>Marketplace</a>
+        </div>
+      </div>
+      <div id="empty" class="col-1">
+      </div>
+      <div id="username" class="col-2">
+          <i class="far fa-user-circle" id="fontAwesome"></i>
+          <a  href="{% url 'login' %}">Login</a>
+      </div>
+    </div>
     {% endif %}
     <hr />
 </div>
