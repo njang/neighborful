@@ -29,3 +29,8 @@ body {
     transform: translate(-50%, -50%);
     color: white;
 }
+
+.profileTbl {
+  color: red;
+  border: black 2px solid;
+}

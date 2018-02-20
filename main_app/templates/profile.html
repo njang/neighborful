@@ -7,13 +7,35 @@
 
 <a href='/sell'><button>Sell</button></a>
 <a href='/marketplace'><button>Buy</button></a>
-
-<h2>Currently selling</h2>
-{% for produce in produces %}
-<a href="/{{produce.id}}">
-  <h3>{{ produce.name }}</h3>
-</a>
-
+<h2 class="profileBalance">My Balance: 100</h2>
+<table class="profileTbl">
+  <thead>
+    <th>Currently selling</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Produce</td>
+      <td>Available</td>
+      <td>Credit</td>
+    </tr>
+    <tr>
+      <td>Tomatoes</td>
+      <td>12 oz</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <td>Lettuce</td>
+      <td>5 oz</td>
+      <td>2.0</td>
+    </tr>
+<!-- Neo Code  -->
+      {% for produce in produces %}
+      <a href="/{{produce.id}}">
+        <h4>{{ produce.name }}</h4>
+      </a>
+<!--  -->
+  </tbody>
+</table>
 {% endfor %}
 
 {% endblock %}
