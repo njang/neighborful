@@ -47,3 +47,26 @@
 {% endfor %}
 {% include "./footer.html" %}
 {% endblock %}
+
+
+
+<!-- {% if user.is_authenticated == false %}
+	<p>Please log in</p>
+
+{% else %}
+	<h1>{{ user.first_name }}'s profile:</h1>
+
+	<a href='/sell'><button>Sell</button></a>
+	<a href='/marketplace'><button>Buy</button></a>
+
+	<h2>Currently selling</h2>
+	{% for produce in produces %}
+	<a href="/{{produce.id}}">
+	  <h3>{{ produce.name }}</h3>
+	</a>
+	{% endfor %}
+
+{% endif %}
+
+{% endblock %}-->
+
