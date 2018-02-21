@@ -5,7 +5,7 @@
 {% include "./header.html" %}
 <div class="container">
 	<div style="text-align: center";>
-		<h1>Marketplace</h1>
+		<h1 style="text-decoration: underline">Marketplace</h1>
 
 		<form method="GET" action="/search">
 			<input type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
@@ -13,11 +13,11 @@
 		</form>
 	</div>
 	<!-- Neo code prevents tbl from showing, thats why table rows 2 - 6 are above 1 -->
-		<br>
+	<br>
 	<table style='margin: auto;' class="mTbl">
 		<thead>
 			<tr>
-				<th>Produce</th>
+				<th>Produce </th>
 				<th>Available</th>
 				<th>Credit</th>
 				<th>Farmer</th>
@@ -30,6 +30,7 @@
 				<td>3.0</td>
 				<td>Natalie</td>
 			</tr>
+
 			<tr class="mTblRow3">
 				<td>Peppers</td>
 				<td>12 oz</td>
