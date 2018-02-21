@@ -63,7 +63,6 @@ def maps(request):
     center_lat = mean(address.gps_lat for address in addresses)
     center_lng = mean(address.gps_lng for address in addresses)
     key = os.environ['GOOGLE_MAPS_API_KEY']
-    # key = "AIzaSyCOFz8yjuRsd5QFLtUfkoPMV8qrTFaiT9g"
     return render(request, 'maps.html', {'addresses': addresses, 'center_lat': center_lat, 'center_lng': center_lng, 'key': key})
 
 def about(request):
