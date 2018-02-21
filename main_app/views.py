@@ -17,16 +17,7 @@ def index(request):
 
 def marketplace(request):
 	produces = Produce.objects.all()
-# 	queryset_list = Produce.objects.all()
-# 	if request.user.is_staff or request.user.is_superuser:
-# 		queryset_list = Produce.objects.all()
-# 	query = request.GET.get("q")
-# 	if query:
-# 		queryset_list = queryset_list.filter(name__icontains=query)
-
-
 	return render(request, 'marketplace.html', {'produces': produces})
-
 
 def search(request):
 	today = timezone.now().date()
@@ -53,7 +44,6 @@ def search(request):
 		# If page is out of range (e.g. 9999), deliver last page of results.
 		queryset = paginator.page(paginator.num_pages)
 
-
 	context = {
 		"object_list": queryset,
 		"title": "List",
@@ -61,11 +51,7 @@ def search(request):
 		"today": today,
 	}
 
-
 	return render(request, 'search.html', context)
-
-
-
 
 def maps(request):
     addresses = Address.objects.all()
