@@ -1,13 +1,4 @@
 {% load static %}
-/* iPhone 6+ ----------- */
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
 body {
     text-align: center;
 }
@@ -37,16 +28,43 @@ body {
     transform: translate(-50%, -50%);
     color: white;
 }
-
-#profileTbl {
-  color: red;
-  border: black 2px solid;
-  
-}
-
+/*////////////// TABLES  //////////////*/
+/* marketplace.html */
 .mTbl {
   color: black;
   border: black 2px solid;
+  table-layout: fixed;
+}
+/* profile.html */
+#profileTbl {
+  color: red;
+  border: black 2px solid;
+  table-layout: fixed;
+}
 
+td {
+  border: black solid 2px;
+}
 
+th {
+  border: black solid 2px;
+}
+
+thead {
+  font-weight: bold;
+}
+/*////////////////////////////*/
+/* header.html */
+#fontAwesome {
+  font-size: 50px;
+}
+
+#username {
+  display: flex;
+  flex-direction: column;
+}
+
+#nav {
+  display: flex;
+  flex-direction: column;
 }
