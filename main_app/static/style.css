@@ -133,3 +133,117 @@ thead {
 footer {
   font-family: 'Poppins', sans-serif;
 }
+
+/* ABOUT PAGE */
+#aboutPpl {
+  display: flex;
+  justify-content: space-around;
+  border: black 2px solid;
+}
+
+#about {
+  font-family: 'Poppins', sans-serif;
+  border: purple 2px solid;
+}
+
+.aboutTitle {
+  margin: 30px;
+
+}
+
+#neo {
+  border: 2px red solid;
+}
+
+.neoTitle {
+
+}
+
+.neoGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.neoGithub:hover, a:active {
+  text-decoration: none;
+  color: #02C984;
+}
+
+.neoLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.neoLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #02C984;
+}
+
+#tess {
+  border: 2px red solid;
+}
+
+.tessTitle {
+  text-decoration: underline;
+  text-decoration-color: #FE0386;
+}
+
+.tessGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.tessGithub:hover, a:active {
+  text-decoration: none;
+  color: #FE0386;
+}
+
+.tessLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.tessLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #FE0386;
+}
+
+#aleena {
+  border: 2px red solid;
+}
+
+.aleenaTitle {
+
+}
+
+.aleenaGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.aleenaGithub:hover, a:active {
+  text-decoration: none;
+  color: #FEDA02;
+}
+
+.aleenaLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.aleenaLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #FEDA02;
+}
