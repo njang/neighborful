@@ -1,5 +1,4 @@
 {% load static %}
-
 body {
     text-align: center;
 }
@@ -28,4 +27,44 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+}
+/*////////////// TABLES  //////////////*/
+/* marketplace.html */
+.mTbl {
+  color: black;
+  border: black 2px solid;
+  table-layout: fixed;
+}
+/* profile.html */
+#profileTbl {
+  color: red;
+  border: black 2px solid;
+  table-layout: fixed;
+}
+
+td {
+  border: black solid 2px;
+}
+
+th {
+  border: black solid 2px;
+}
+
+thead {
+  font-weight: bold;
+}
+/*////////////////////////////*/
+/* header.html */
+#fontAwesome {
+  font-size: 50px;
+}
+
+#username {
+  display: flex;
+  flex-direction: column;
+}
+
+#nav {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,9 +1,11 @@
 from django.conf.urls import url
-from .views import index, about, show, profile, sell_form, edit_form, post_produce, update_produce, delete_post, marketplace, login_view, logout_view
+from .views import index, about, maps, show, profile, sell_form, edit_form, post_produce, update_produce, delete_post, marketplace, login_view, logout_view, search
 
 urlpatterns = [
     url(r'^$', index),					# to main landing page
-    url(r'^about/$', about),			# to about page
+    url(r'^about/$', about),            # to about page
+    url(r'^maps/$', maps),			       # to maps page
+    url(r'^search/$', search),
     url(r'^user/(\w+)/$', profile, name='profile'),				# display user profile page
     url(r'^marketplace/$', marketplace, name='marketplace'),	# display marketplace showing all produces available for sale
     url(r'^([0-9]+)/$', show, name='show'),						# display a single produce by id

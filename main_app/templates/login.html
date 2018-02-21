@@ -2,11 +2,13 @@
 {% load staticfiles %}
 
 {% block content %}
+{% include "./header.html" %}
 <h1>Login</h1>
 <form method="POST" action=".">
   {% csrf_token %}
   {{ form.as_p}}
   <input type="submit" value="Submit" />
 </form>
+{% include "./footer.html" %}
 
 {% endblock %}

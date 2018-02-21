@@ -1,9 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from .models import Produce
+
+from django.db.models import Q
+from .models import Produce, Address
 from .forms import ProduceForm, LoginForm
+from django.utils import timezone
+from statistics import mean
+
+import os
 
 # Create your views here.
 def index(request):
@@ -13,12 +21,54 @@ def marketplace(request):
 	produces = Produce.objects.all()
 	return render(request, 'marketplace.html', {'produces': produces})
 
+def search(request):
+	today = timezone.now().date()
+	queryset_list = Produce.objects.active() #.order_by("-timestamp")
+	if request.user.is_staff or request.user.is_superuser:
+		queryset_list = Produce.objects.all()
+
+	query = request.GET.get("q")
+	if query:
+		queryset_list = queryset_list.filter(
+				Q(name__icontains=query)|
+				Q(seller__first_name__icontains=query) |
+				Q(seller__last_name__icontains=query)
+				).distinct()
+	paginator = Paginator(queryset_list, 2) # Show 25 contacts per page
+	page_request_var = "page"
+	page = request.GET.get(page_request_var)
+	try:
+		queryset = paginator.page(page)
+	except PageNotAnInteger:
+		# If page is not an integer, deliver first page.
+		queryset = paginator.page(1)
+	except EmptyPage:
+		# If page is out of range (e.g. 9999), deliver last page of results.
+		queryset = paginator.page(paginator.num_pages)
+
+	context = {
+		"object_list": queryset,
+		"title": "List",
+		"page_request_var": page_request_var,
+		"today": today,
+		"query": query,
+	}
+
+	return render(request, 'search.html', context)
+
+def maps(request):
+    addresses = Address.objects.all()
+    center_lat = mean(address.gps_lat for address in addresses)
+    center_lng = mean(address.gps_lng for address in addresses)
+    key = os.environ["GOOGLE_MAPS_API_KEY"]
+    return render(request, 'maps.html', {'addresses': addresses, 'center_lat': center_lat, 'center_lng': center_lng, 'key': key})
+
 def about(request):
 	return render(request, 'about.html')
 
 def show(request, produce_id):
     produce = Produce.objects.get(id=produce_id)
-    return render(request, 'show.html', {'produce': produce}) 
+    return render(request, 'show.html', {'produce': produce})
 
 def sell_form(request):
     form = ProduceForm()

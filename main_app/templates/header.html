@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container-fluid">
+    {% if user.is_authenticated %}
+    <div class="row">
+      <div id="empty" class="col-3">
+      </div>
+      <div id="nav" class="col-6">
+      <h1>Neighborful</h1>
+      <div>
+        <a href='/about'>About</a> | <a href='/'>Home</a> |
+        <a href='/marketplace'>Marketplace</a>
+      </div>
+    </div>
+    <div id="empty" class="col-1">
+    </div>
+    <div id="username" class="col-2">
+        <i class="far fa-user-circle" id="fontAwesome"></i>
+        <a class="col-md-auto" id="user" href="{% url 'profile' user.username %}">Hello, {{ user.first_name }}!</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+    {% else %}
+    <div class="row">
+      <div id="empty" class="col-3">
+      </div>
+      <div id="nav" class="col-6">
+      <h1>Neighborful</h1>
+        <div>
+          <a href='/about'>About</a> | <a href='/'>Home</a> |
+          <a href='/marketplace'>Marketplace</a>
+        </div>
+      </div>
+      <div id="empty" class="col-1">
+      </div>
+      <div id="username" class="col-2">
+          <i class="far fa-user-circle" id="fontAwesome"></i>
+          <a  href="{% url 'login' %}">Login</a>
+      </div>
+    </div>
+    {% endif %}
+    <hr />
+</div>
+{% endblock %}
