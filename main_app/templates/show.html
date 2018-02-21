@@ -13,11 +13,37 @@
         
 	{% else %}
     	<p>Seller: {{ produce.seller.first_name }}</p>
-        <p><button onclick='JavaScript:alert('Buy function will be enabed soon!')'>Buy</button></p>
+        <p><button class='btn btn-success' data-toggle='modal' data-target='#modalBuyConfirm'>Buy</button></p>
+        <!-- <p><button class='btn btn-success' onclick='JavaScript:alert("Buy function will be enabed soon!")'>Buy</button></p> -->
 	{% endif %}
     
+    <!-- The Modal for Buy confirmation -->
+    <div class='modal fade' id='modalBuyConfirm'>
+      <div class='modal-dialog'>
+        <div class='modal-content'>
 
-    <!-- The Modal -->
+          <!-- Modal Header -->
+          <div class='modal-header'>
+            <h4 class='modal-title'>{{ produce.name }}</h4>
+            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class='modal-body'>
+            Would you like to purchase this item?
+          </div>
+
+          <!-- Modal footer -->
+          <div class='modal-footer'>
+            <button type='button' class='btn btn-success' data-dismiss='modal'>Buy</button>
+            <button type='button' class='btn btn-basic' data-dismiss='modal'>Cancel</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal for Delete confirmation -->
     <div class='modal fade' id='modalDeleteConfirm'>
       <div class='modal-dialog'>
         <div class='modal-content'>
