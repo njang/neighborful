@@ -136,14 +136,17 @@ footer {
 
 /* ABOUT PAGE */
 #aboutPpl {
-  display: flex;
-  justify-content: space-around;
-  border: black 2px solid;
+  justify-content: center;
 }
 
 #about {
   font-family: 'Poppins', sans-serif;
-  border: purple 2px solid;
+}
+
+.container-fluid.full-width {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
 }
 
 .aboutTitle {
@@ -151,12 +154,9 @@ footer {
 
 }
 
-#neo {
-  border: 2px red solid;
-}
-
 .neoTitle {
-
+  border-bottom: #02C984 5px dotted;
+  margin-bottom: 15px;
 }
 
 .neoGithub {
@@ -183,13 +183,9 @@ footer {
   color: #02C984;
 }
 
-#tess {
-  border: 2px red solid;
-}
-
 .tessTitle {
-  text-decoration: underline;
-  text-decoration-color: #FE0386;
+  border-bottom: #FE0386 5px dotted;
+  margin-bottom: 15px;
 }
 
 .tessGithub {
@@ -216,12 +212,9 @@ footer {
   color: #FE0386;
 }
 
-#aleena {
-  border: 2px red solid;
-}
-
 .aleenaTitle {
-
+  border-bottom: #FEDA02 5px dotted;
+  margin-bottom: 15px;
 }
 
 .aleenaGithub {
