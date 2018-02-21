@@ -65,10 +65,13 @@ thead {
 
 #header {
   font-family: 'Poppins', sans-serif;
+  padding-bottom: 40px;
+  border-bottom: 2px black solid;
 }
 
 .headerTitle {
   font-size: 60px;
+  margin-bottom: 30px;
 }
 
 #username {
@@ -76,6 +79,7 @@ thead {
   flex-direction: column;
   font-size: 20px;
   color: black;
+  margin-top: 15px;
 }
 
 #nav {
@@ -86,6 +90,7 @@ thead {
 }
 
 #userLink {
+  margin-top: 20px;
   text-decoration: none;
   color: black;
 }
@@ -97,6 +102,13 @@ thead {
 #aboutLink {
   text-decoration: none;
   color: black;
+  margin-right: 10px;
+  border: #02C984 2px solid;
+  border-radius: 50px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #aboutLink:hover, a:active {
@@ -106,6 +118,10 @@ thead {
 #marketplaceLink {
   text-decoration: none;
   color: black;
+  margin-left: 10px;
+  border: #FEDA02 2px solid;
+  border-radius: 50px;
+  padding: 10px;
 }
 
 #marketplaceLink:hover, a:active {
@@ -115,6 +131,14 @@ thead {
 #homeLink {
   text-decoration: none;
   color: black;
+  margin-right: 10px;
+  margin-left: 10px;
+  border: #FE0386 2px solid;
+  border-radius: 50px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #homeLink:hover, a:active {
@@ -132,6 +156,8 @@ thead {
 
 footer {
   font-family: 'Poppins', sans-serif;
+  border-top: solid black 2px;
+  margin-top: 20px;
 }
 
 /* ABOUT PAGE */
