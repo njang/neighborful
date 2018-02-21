@@ -3,10 +3,9 @@
 
 {% block content %}
 {% include "./header.html" %}
-<div class="container">
-	<div style="text-align: center";>
+<div id="marketplace" class="container-fluid full-width">
+	<div>
 		<h1>Marketplace</h1>
-
 		<form method="GET" action="/search">
 			<input type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
 			<Button type="submit" value="search" class="btn btn-primary">Search!</button>
@@ -14,7 +13,8 @@
 	</div>
 	<!-- Neo code prevents tbl from showing, thats why table rows 2 - 6 are above 1 -->
 		<br>
-	<table style='margin: auto;' class="mTbl">
+	<div class="row" id="mTbl">
+	<table style='margin: auto;' class="col-6">
 		<thead>
 			<tr>
 				<th>Produce</th>
@@ -42,6 +42,7 @@
 			{% endfor %}
 		</tbody>
 	</table>
+	{% include "./maps.html" %}
 </div>
 {% include "./footer.html" %}
 {% endblock %}

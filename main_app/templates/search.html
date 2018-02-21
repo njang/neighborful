@@ -3,10 +3,10 @@
 
 {% block content %}
 {% include "./header.html" %}
+<div class="container-fluid  full-width" id="search">
     <h1 style="text-decoration: underline">Search Results:</h1>
     <hr>
 <br>
-
   {% for obj in object_list %}
 <div class="row">
   <div class="col-sm-12">
@@ -15,12 +15,12 @@
         {% if obj.price %}<p>Price: {{ obj.price }}</p>{% endif %}
         {% if obj.quantity %}<p>Quantity: {{ obj.quantity }}</p>{% endif %}
         {% if obj.seller %}<p>Seller: {{ obj.seller.first_name }}</p>{% endif %}
-
         <p><a href='/{{ obj.id }}' class="btn btn-primary" role="button"> View</a></p>
       </div>
     </div>
   </div>
 <hr/>
+</div>
 </div>
 {% endfor %}
 

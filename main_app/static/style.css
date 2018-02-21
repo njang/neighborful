@@ -3,10 +3,14 @@ body {
     text-align: center;
 }
 
-/* green: #02C984
-yellow: #FEDA02
+/* green: #166DD3
+yellow: #166DD3
 blue: #262454
-pink: #FE0386 */
+pink: #EB0401 */
+
+/* #EB0401 reds
+#166DD3 blue
+#438918 green */
 
 /* INDEX  */
 .hero-image {
@@ -17,6 +21,7 @@ pink: #FE0386 */
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    margin-top: 20px;
 }
 
 /* Place text in the middle of the image */
@@ -34,7 +39,16 @@ pink: #FE0386 */
 }
 /*////////////// TABLES  //////////////*/
 /* marketplace.html */
-.mTbl {
+
+tbody tr:nth-child(odd) {
+  background-color: #ff33cc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e495e4;
+}
+
+#mTbl {
   color: black;
   border: black 2px solid;
   table-layout: fixed;
@@ -74,14 +88,6 @@ thead {
   margin-bottom: 30px;
 }
 
-#username {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-  color: black;
-  margin-top: 15px;
-}
-
 #nav {
   display: flex;
   flex-direction: column;
@@ -89,21 +95,42 @@ thead {
   text-decoration: none;
 }
 
+#username {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: black;
+  margin-top: 7px;
+}
+
 #userLink {
-  margin-top: 20px;
+  margin-top: 5px;
   text-decoration: none;
   color: black;
 }
 
 #userLink:hover, a:active {
-  color: #262454;
+  color: #FFD50B;
+}
+
+#logoutLink {
+  text-decoration: none;
+  color: black;
+  border: #FFD50B 2px solid;
+  border-radius: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#logoutLink:hover, a:active {
+   color: #FFD50B;
 }
 
 #aboutLink {
   text-decoration: none;
   color: black;
   margin-right: 10px;
-  border: #02C984 2px solid;
+  border: #166DD3 2px solid;
   border-radius: 50px;
   padding-right: 40px;
   padding-left: 40px;
@@ -112,20 +139,20 @@ thead {
 }
 
 #aboutLink:hover, a:active {
-  color: #02C984;
+  color: #166DD3;
 }
 
 #marketplaceLink {
   text-decoration: none;
   color: black;
   margin-left: 10px;
-  border: #FEDA02 2px solid;
+  border: #438918 2px solid;
   border-radius: 50px;
   padding: 10px;
 }
 
 #marketplaceLink:hover, a:active {
-   color: #FEDA02;
+   color: #438918;
 }
 
 #homeLink {
@@ -133,7 +160,7 @@ thead {
   color: black;
   margin-right: 10px;
   margin-left: 10px;
-  border: #FE0386 2px solid;
+  border: #EB0401 2px solid;
   border-radius: 50px;
   padding-right: 40px;
   padding-left: 40px;
@@ -142,22 +169,14 @@ thead {
 }
 
 #homeLink:hover, a:active {
-   color: #FE0386;
-}
-
-#logoutLink {
-  text-decoration: none;
-  color: black;
-}
-
-#logoutLink:hover, a:active {
-   color: #1C3154;
+   color: #EB0401;
 }
 
 footer {
   font-family: 'Poppins', sans-serif;
   border-top: solid black 2px;
   margin-top: 20px;
+  padding: 20px;
 }
 
 /* ABOUT PAGE */
@@ -181,7 +200,7 @@ footer {
 }
 
 .neoTitle {
-  border-bottom: #02C984 5px dotted;
+  border-bottom: #166DD3 5px dotted;
   margin-bottom: 15px;
 }
 
@@ -194,7 +213,7 @@ footer {
 
 .neoGithub:hover, a:active {
   text-decoration: none;
-  color: #02C984;
+  color: #166DD3;
 }
 
 .neoLinkedin {
@@ -206,11 +225,11 @@ footer {
 
 .neoLinkedin:hover, a:active {
   text-decoration: none;
-  color: #02C984;
+  color: #166DD3;
 }
 
 .tessTitle {
-  border-bottom: #FE0386 5px dotted;
+  border-bottom: #EB0401 5px dotted;
   margin-bottom: 15px;
 }
 
@@ -223,7 +242,7 @@ footer {
 
 .tessGithub:hover, a:active {
   text-decoration: none;
-  color: #FE0386;
+  color: #EB0401;
 }
 
 .tessLinkedin {
@@ -235,11 +254,11 @@ footer {
 
 .tessLinkedin:hover, a:active {
   text-decoration: none;
-  color: #FE0386;
+  color: #EB0401;
 }
 
 .aleenaTitle {
-  border-bottom: #FEDA02 5px dotted;
+  border-bottom: #438918 5px dotted;
   margin-bottom: 15px;
 }
 
@@ -252,7 +271,7 @@ footer {
 
 .aleenaGithub:hover, a:active {
   text-decoration: none;
-  color: #FEDA02;
+  color: #438918;
 }
 
 .aleenaLinkedin {
@@ -264,5 +283,31 @@ footer {
 
 .aleenaLinkedin:hover, a:active {
   text-decoration: none;
-  color: #FEDA02;
+  color: #438918;
+}
+
+/* MARKETPLACE */
+
+#marketplace {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* PROFILE */
+#profile {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SELL */
+#sell {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SEARCH */
+#search {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SHOW */
+#show {
+  font-family: 'Poppins', sans-serif;
 }
