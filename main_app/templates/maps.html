@@ -14,40 +14,39 @@
 			{% endfor %}
 		]
 
-	    // let locations = [
-	    //   ['Shipe Neighborhood Park', 30.307208, -97.727505, 4],
-	    //   ['Trinity Church', 30.303034, -97.731454, 5],
-	    //   ['Hyde Park Montessori', 30.303604, -97.728139, 3],
-	    //   ['AHB Community School', 30.303321, -97.731250, 2],
-	    //   ['Hyde Park Baptist Church', 30.302583, -97.731817, 1]
-	    // ];
+		// let locations = [
+		//   ['Shipe Neighborhood Park', 30.307208, -97.727505, 4],
+		//   ['Trinity Church', 30.303034, -97.731454, 5],
+		//   ['Hyde Park Montessori', 30.303604, -97.728139, 3],
+		//   ['AHB Community School', 30.303321, -97.731250, 2],
+		//   ['Hyde Park Baptist Church', 30.302583, -97.731817, 1]
+		// ];
 
-	    console.log({{center_lat}})
-	    console.log({{center_lng}})
-	    let map = new google.maps.Map(document.getElementById('map'), {
-	      zoom: 16,
-	      // center: new google.maps.LatLng({{center_lat}}, {{center_lng}}),
-	      center: new google.maps.LatLng(30.303604, -97.728139),
-	      mapTypeId: google.maps.MapTypeId.ROADMAP
-	    });
+		let map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 16,
+			// center: new google.maps.LatLng({{center_lat}}, {{center_lng}}),
+			center: new google.maps.LatLng(30.303604, -97.728139),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		});
 
-	    let infowindow = new google.maps.InfoWindow();
+		let infowindow = new google.maps.InfoWindow();
 
-	    let marker, i;
+		let marker, i;
 
-	    for (i = 0; i < locations.length; i++) { 
-	      marker = new google.maps.Marker({
-	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-	        map: map
-	      });
+		for (i = 0; i < locations.length; i++) { 
+			marker = new google.maps.Marker({
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			map: map
+			});
 
-	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-	        return function() {
-	          infowindow.setContent(locations[i][0]);
-	          infowindow.open(map, marker);
-	        }
-	      })(marker, i));
-	    }
-	  </script>
+			google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			return function() {
+			  infowindow.setContent(locations[i][0]);
+			  infowindow.open(map, marker);
+			}
+			})(marker, i));
+		}
+	</script>
+		
 {% include "./footer.html" %}
 {% endblock %}
