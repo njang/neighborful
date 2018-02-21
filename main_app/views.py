@@ -34,7 +34,7 @@ def search(request):
 				Q(seller__first_name__icontains=query) |
 				Q(seller__last_name__icontains=query)
 				).distinct()
-	paginator = Paginator(queryset_list, 2) # Show 25 contacts per page
+	paginator = Paginator(queryset_list, 3) # Show 25 contacts per page
 	page_request_var = "page"
 	page = request.GET.get(page_request_var)
 	try:
