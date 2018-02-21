@@ -4,16 +4,26 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+
 from django.db.models import Q
-from .models import Produce
+from .models import Produce, Address
 from .forms import ProduceForm, LoginForm
 from django.utils import timezone
+from statistics import mean
+
 # Create your views here.
 def index(request):
 	return render(request, 'index.html')
 
 def marketplace(request):
 	produces = Produce.objects.all()
+# 	queryset_list = Produce.objects.all()
+# 	if request.user.is_staff or request.user.is_superuser:
+# 		queryset_list = Produce.objects.all()
+# 	query = request.GET.get("q")
+# 	if query:
+# 		queryset_list = queryset_list.filter(name__icontains=query)
+
 
 	return render(request, 'marketplace.html', {'produces': produces})
 
@@ -49,6 +59,7 @@ def search(request):
 		"title": "List",
 		"page_request_var": page_request_var,
 		"today": today,
+		"query": query,
 	}
 
 
@@ -58,7 +69,10 @@ def search(request):
 
 
 def maps(request):
-    return render(request, 'maps.html')
+    addresses = Address.objects.all()
+    center_lat = mean(address.gps_lat for address in addresses)
+    center_lng = mean(address.gps_lng for address in addresses)
+    return render(request, 'maps.html', {'addresses': addresses, 'center_lat': center_lat, 'center_lng': center_lng})
 
 def about(request):
 	return render(request, 'about.html')
