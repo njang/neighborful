@@ -3,6 +3,11 @@ body {
     text-align: center;
 }
 
+/* green: #02C984
+yellow: #FEDA02
+blue: #262454
+pink: #FE0386 */
+
 /* INDEX  */
 .hero-image {
     background: url("/static/images/elaine-casap-86020.jpg");
@@ -73,15 +78,20 @@ thead {
   color: black;
 }
 
-#user {
-  text-decoration: none;
-}
-
 #nav {
   display: flex;
   flex-direction: column;
   font-size: 20px;
   text-decoration: none;
+}
+
+#userLink {
+  text-decoration: none;
+  color: black;
+}
+
+#userLink:hover, a:active {
+  color: #262454;
 }
 
 #aboutLink {
@@ -90,6 +100,7 @@ thead {
 }
 
 #aboutLink:hover, a:active {
+  color: #02C984;
 }
 
 #marketplaceLink {
@@ -98,7 +109,7 @@ thead {
 }
 
 #marketplaceLink:hover, a:active {
-   color: red;
+   color: #FEDA02;
 }
 
 #homeLink {
@@ -107,15 +118,16 @@ thead {
 }
 
 #homeLink:hover, a:active {
-   color: red;
+   color: #FE0386;
 }
 
 #logoutLink {
   text-decoration: none;
+  color: black;
 }
 
 #logoutLink:hover, a:active {
-   color: red;
+   color: #1C3154;
 }
 
 footer {
