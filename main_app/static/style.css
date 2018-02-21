@@ -3,17 +3,16 @@ body {
     text-align: center;
 }
 
-/* The hero image */
-.hero-image {
-    /* The image used */
-    background: url("/static/images/elaine-casap-86020.jpg");
-    /*background: url("/static/images/elaine-casap-86020.jpg") 50% 0 no-repeat fixed;*/
+/* green: #02C984
+yellow: #FEDA02
+blue: #262454
+pink: #FE0386 */
 
-    /* Set a specific height */
+/* INDEX  */
+.hero-image {
+    background: url("/static/images/elaine-casap-86020.jpg");
     height: 480px;
     width: 100%;
-
-    /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,6 +26,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.indexTxt {
+  font-size: 100px;
 }
 /*////////////// TABLES  //////////////*/
 /* marketplace.html */
@@ -59,12 +63,180 @@ thead {
   font-size: 50px;
 }
 
+#header {
+  font-family: 'Poppins', sans-serif;
+}
+
+.headerTitle {
+  font-size: 60px;
+}
+
 #username {
   display: flex;
   flex-direction: column;
+  font-size: 20px;
+  color: black;
 }
 
 #nav {
   display: flex;
   flex-direction: column;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#userLink {
+  text-decoration: none;
+  color: black;
+}
+
+#userLink:hover, a:active {
+  color: #262454;
+}
+
+#aboutLink {
+  text-decoration: none;
+  color: black;
+}
+
+#aboutLink:hover, a:active {
+  color: #02C984;
+}
+
+#marketplaceLink {
+  text-decoration: none;
+  color: black;
+}
+
+#marketplaceLink:hover, a:active {
+   color: #FEDA02;
+}
+
+#homeLink {
+  text-decoration: none;
+  color: black;
+}
+
+#homeLink:hover, a:active {
+   color: #FE0386;
+}
+
+#logoutLink {
+  text-decoration: none;
+  color: black;
+}
+
+#logoutLink:hover, a:active {
+   color: #1C3154;
+}
+
+footer {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ABOUT PAGE */
+#aboutPpl {
+  justify-content: center;
+}
+
+#about {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container-fluid.full-width {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+}
+
+.aboutTitle {
+  margin: 30px;
+
+}
+
+.neoTitle {
+  border-bottom: #02C984 5px dotted;
+  margin-bottom: 15px;
+}
+
+.neoGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.neoGithub:hover, a:active {
+  text-decoration: none;
+  color: #02C984;
+}
+
+.neoLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.neoLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #02C984;
+}
+
+.tessTitle {
+  border-bottom: #FE0386 5px dotted;
+  margin-bottom: 15px;
+}
+
+.tessGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.tessGithub:hover, a:active {
+  text-decoration: none;
+  color: #FE0386;
+}
+
+.tessLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.tessLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #FE0386;
+}
+
+.aleenaTitle {
+  border-bottom: #FEDA02 5px dotted;
+  margin-bottom: 15px;
+}
+
+.aleenaGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.aleenaGithub:hover, a:active {
+  text-decoration: none;
+  color: #FEDA02;
+}
+
+.aleenaLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.aleenaLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #FEDA02;
 }
