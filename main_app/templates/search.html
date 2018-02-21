@@ -3,12 +3,14 @@
 
 {% block content %}
 {% include "./header.html" %}
-    <h1 style="text-decoration: underline">Search Results:</h1>
+
+    <h1 style="text-decoration: underline">Search Results in: {{ query }}</h1>
     <hr>
 <br>
+{% for obj in object_list %}
 
-  {% for obj in object_list %}
 <div class="row">
+
   <div class="col-sm-12">
       <div class="caption">
         <h3>{{ obj.name }}</h3>

@@ -49,6 +49,7 @@ def search(request):
 		"title": "List",
 		"page_request_var": page_request_var,
 		"today": today,
+		"query": query,
 	}
 
 	return render(request, 'search.html', context)
