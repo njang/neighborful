@@ -13,7 +13,7 @@ class Produce(models.Model):
     	return self.name
 
 class Address(models.Model):
-    user = models.OneToOneField(User, on_delete=models.PROTECT, primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     street = models.CharField(max_length=100)
     gps_lat = models.DecimalField(max_digits=10, decimal_places=6)
     gps_lng = models.DecimalField(max_digits=10, decimal_places=6)
