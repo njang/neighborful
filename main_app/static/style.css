@@ -3,17 +3,11 @@ body {
     text-align: center;
 }
 
-/* The hero image */
+/* INDEX  */
 .hero-image {
-    /* The image used */
     background: url("/static/images/elaine-casap-86020.jpg");
-    /*background: url("/static/images/elaine-casap-86020.jpg") 50% 0 no-repeat fixed;*/
-
-    /* Set a specific height */
     height: 480px;
     width: 100%;
-
-    /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,6 +21,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.indexTxt {
+  font-size: 100px;
 }
 /*////////////// TABLES  //////////////*/
 /* marketplace.html */
@@ -59,12 +58,66 @@ thead {
   font-size: 50px;
 }
 
+#header {
+  font-family: 'Poppins', sans-serif;
+}
+
+.headerTitle {
+  font-size: 60px;
+}
+
 #username {
   display: flex;
   flex-direction: column;
+  font-size: 20px;
+  color: black;
+}
+
+#user {
+  text-decoration: none;
 }
 
 #nav {
   display: flex;
   flex-direction: column;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#aboutLink {
+  text-decoration: none;
+  color: black;
+}
+
+#aboutLink:hover, a:active {
+}
+
+#marketplaceLink {
+  text-decoration: none;
+  color: black;
+}
+
+#marketplaceLink:hover, a:active {
+   color: red;
+}
+
+#homeLink {
+  text-decoration: none;
+  color: black;
+}
+
+#homeLink:hover, a:active {
+   color: red;
+}
+
+#logoutLink {
+  text-decoration: none;
+}
+
+#logoutLink:hover, a:active {
+   color: red;
+}
+
+footer {
+  font-family: 'Poppins', sans-serif;
 }
