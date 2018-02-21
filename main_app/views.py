@@ -10,10 +10,6 @@ from .models import Produce, Address
 from .forms import ProduceForm, LoginForm
 from django.utils import timezone
 from statistics import mean
-# from .env import GOOGLE_MAPS_API_KEY
-import os
-
-
 
 # Create your views here.
 def index(request):
@@ -62,8 +58,7 @@ def maps(request):
     addresses = Address.objects.all()
     center_lat = mean(address.gps_lat for address in addresses)
     center_lng = mean(address.gps_lng for address in addresses)
-    key = os.environ['GOOGLE_MAPS_API_KEY']
-    return render(request, 'maps.html', {'addresses': addresses, 'center_lat': center_lat, 'center_lng': center_lng, 'key': key})
+    return render(request, 'maps.html', {'addresses': addresses, 'center_lat': center_lat, 'center_lng': center_lng})
 
 def about(request):
 	return render(request, 'about.html')
