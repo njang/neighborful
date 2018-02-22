@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 #Manage the model
 class ProduceManager(models.Manager):
     def active(self, *args, **kwargs):
@@ -12,8 +11,7 @@ class Produce(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.IntegerField(default=0)
     seller = models.ForeignKey(User, on_delete=models.PROTECT, related_name='seller')
-    # buyer = models.ForeignKey(User, on_delete=models.PROTECT, related_name='buyer')
-    buyer = models.CharField(max_length=100)
+    buyer = models.ForeignKey(User, on_delete=models.PROTECT, related_name='buyer', null=True)
     objects = ProduceManager()
 
     def __str__(self):
@@ -34,3 +32,6 @@ class Address(models.Model):
     def __str__(self):
     	return self.street
 
+class Balance(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    balance = models.DecimalField(max_digits=10, decimal_places=2, default=100)
