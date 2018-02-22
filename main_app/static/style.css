@@ -574,16 +574,17 @@ footer {
 .sellBtn {
   border: black 2px solid;
   border-radius: 15px;
-  color: black;
+  color: white;
   background-color: #FFD50B;
   font-size: 20px;
   padding-left: 5%;
   padding-right: 5%;
   margin: 4%;
+  font-size: 25px;
 }
 
 .sellBtn:hover, a:active {
-  color:#EB0401;
+  color: black;
 }
 
 #sellImgLeft {
