@@ -10,7 +10,12 @@
 			<h1 class="sellTitle">Sell</h1>
 			<form action="post_url/" method="post">
 				{% csrf_token %}
-				{{ form.as_p }}
+				<label class="sellName" for="id_name">Name :</label>
+					<input class="sellNameInput" type="text" name="name" maxlength="100" required="" id="id_name"><br></br>
+				<label class="sellPrice" for="id_price">Price :</label>
+					<input class="sellPriceInput" type="number" name="price" step="0.01" required="" id="id_price"><br></br>
+				<label class="sellQuantity" for="id_quantity">Quantity :</label>
+					<input class="sellQuantityInput" type="number" name="quantity" value="0" required="" id="id_quantity"><br></br>
 				<input class="sellBtn" type="submit" value="Sell" />
 			</form>
 		</div>
