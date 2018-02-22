@@ -4,23 +4,20 @@
 {% block content %}
 {% include "./header.html" %}
 <div class="container-fluid  full-width" id="search">
-    <!-- <h1 style="text-decoration: underline">Search Results:</h1> -->
-    <h1 style="text-decoration: underline">Search Results in: {{ query }}</h1>
-    <hr>
+    <h1 class='searchResultsTitle'>Search Results For :  {{ query }}</h1>
     <br>
     {% for obj in object_list %}
     <div class="row">
         <div class="col-sm-12">
             <div class="caption">
-                <h3>{{ obj.name }}</h3>
-                {% if obj.price %}<p>Price: {{ obj.price }}</p>{% endif %}
-                {% if obj.quantity %}<p>Quantity: {{ obj.quantity }}</p>{% endif %}
-                {% if obj.seller %}<p>Seller: {{ obj.seller.first_name }}</p>{% endif %}
-                <p><a href='/{{ obj.id }}' class="btn btn-primary" role="button"> View</a></p>
+                <h3 class="searchObjName">{{ obj.name }}</h3>
+                {% if obj.price %}<p class="searchObjPrice">Price: {{ obj.price }}</p>{% endif %}
+                {% if obj.quantity %}<p class="searchObjQuantity">Quantity: {{ obj.quantity }}</p>{% endif %}
+                {% if obj.seller %}<p class="searchObjSeller">Seller: {{ obj.seller.first_name }}</p>{% endif %}
+                <p><a class="searchObjViewBtn" href='/{{ obj.id }}' class="btn btn-primary" role="button"> View</a></p>
             </div>
         </div>
 </div>
-    <hr/>
     </div>
 </div>
 {% endfor %}
@@ -32,7 +29,7 @@
             {% endif %}
 
             <span class="current">
-                Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+                Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}
             </span>
 
             {% if object_list.has_next %}

@@ -8,14 +8,13 @@
   <div id="profileMain" class="row justify-content-center form-group">
      <div id="topLeft" class="col-6">
        <div class="address">
-         <h2 class="addressTitle">Address
+         <h2 class="addressTitle">Address</h2>
           {% if address.gps_lat != 0%}
            <a href="/address/"><button class="addressBtn">Edit</button></a>
            {% else %}
            <button class="addressBtn">Add</button>
           {% endif %}
-         </h2>
-          {% if address.gps_lat != 0%}
+          {% if address.gps_lat != 0%}<br></br>
          <span id="addressValue" class="h2">{{address.street}}</span>
            {% else %}
          <span class="h2">--</span>

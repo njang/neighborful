@@ -156,6 +156,31 @@ tbody tr:nth-child(even) {
   margin-bottom: 5%;
 }
 
+.addressBtn {
+  border: black 2px solid;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-left: 5%;
+  background: #438918;
+  color: white;
+  padding: 2%;
+}
+
+.addressTitle {
+  border-bottom: solid 5px #438918;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+#addressValue {
+  font-size: 20px;
+}
+
+.marketplaceSeller {
+  font-size: 15px;
+  color: black;
+}
+
 .balance {
   color: #438918;
 }
@@ -393,19 +418,27 @@ footer {
 .neoGithub {
   margin-right: 35px;
   text-decoration: none;
-  color: black;
+  background-color: #166DD3;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding: 2%;
+  color: white;
   font-size: 18px;
 }
 
 .neoGithub:hover, a:active {
   text-decoration: none;
-  color: #166DD3;
+  color: black;
 }
 
 .neoLinkedin {
   margin-left: 35px;
   text-decoration: none;
-  color: black;
+  background-color: #166DD3;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding: 2%;
+  color: white;
   font-size: 18px;
 }
 
@@ -421,26 +454,32 @@ footer {
 
 .tessGithub {
   margin-right: 35px;
-  text-decoration: none;
-  color: black;
+  background-color: #EB0401;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding: 2%;
+  color: white;
   font-size: 18px;
 }
 
 .tessGithub:hover, a:active {
   text-decoration: none;
-  color: #EB0401;
+  color: black;
 }
 
 .tessLinkedin {
   margin-left: 35px;
-  text-decoration: none;
-  color: black;
+  background-color: #EB0401;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding: 2%;
+  color: white;
   font-size: 18px;
 }
 
 .tessLinkedin:hover, a:active {
   text-decoration: none;
-  color: #EB0401;
+  color: black;
 }
 
 .aleenaTitle {
@@ -450,26 +489,32 @@ footer {
 
 .aleenaGithub {
   margin-right: 35px;
-  text-decoration: none;
-  color: black;
+  background-color: #438918;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding: 2%;
+  color: white;
   font-size: 18px;
 }
 
 .aleenaGithub:hover, a:active {
   text-decoration: none;
-  color: #438918;
+  color: black;
 }
 
 .aleenaLinkedin {
   margin-left: 35px;
-  text-decoration: none;
-  color: black;
+  background-color: #438918;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding: 2%;
+  color: white;
   font-size: 18px;
 }
 
 .aleenaLinkedin:hover, a:active {
   text-decoration: none;
-  color: #438918;
+  color: black;
 }
 
 /* PROFILE */
@@ -520,6 +565,14 @@ footer {
   margin-top: 12%;
 }
 
+.icon {
+  width: 35%;
+  position: relative;
+  right:90px;
+  padding-top: 20px;
+
+}
+
 .sellQuantityInput {
   font-size: 20px;
   border: black 2px solid;
@@ -530,16 +583,17 @@ footer {
 .sellBtn {
   border: black 2px solid;
   border-radius: 15px;
-  color: black;
+  color: white;
   background-color: #FFD50B;
   font-size: 20px;
   padding-left: 5%;
   padding-right: 5%;
   margin: 4%;
+  font-size: 25px;
 }
 
 .sellBtn:hover, a:active {
-  color:#EB0401;
+  color: black;
 }
 
 #sellImgLeft {
@@ -557,7 +611,47 @@ footer {
 #search {
   font-family: 'Poppins', sans-serif;
 }
+.searchResultsTitle {
+  margin-top: 2%;
+  padding-bottom: 1%;
+  border-bottom: dotted 5px #EB0401;
+  display: inline-block;
+  margin-bottom: 2%;
+}
 
+.caption {
+  margin-bottom: 5%;
+}
+
+.searchObjName {
+  font-size: 30px;
+  font-weight: bold;
+  color: #438918;
+}
+
+.searchObjPrice {
+    font-size: 20px;
+}
+
+.searchObjQuantity {
+    font-size: 20px;
+}
+
+.searchObjSeller {
+  font-size: 20px;
+}
+
+.searchObjViewBtn {
+  border: black 2px solid;
+  border-radius: 15px;
+  background: #166DD3;
+  color: white;
+  padding: .5%;
+}
+
+.searchObjViewBtn:hover, a:active {
+  color: black;
+}
 /* SHOW */
 #show {
   font-family: 'Poppins', sans-serif;
@@ -577,15 +671,20 @@ footer {
   top: 27.25%;
   left: 22.5%;
   width: 55%;
-  height: 57%;
+  height: 59%;
   border: #FFD50B 2px solid;
   border-radius: 50%;
   box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.5);
 }
 
+.seller {
+  font-size: 30px;
+  color: black;
+}
+
 .showName {
   font-size: 60px;
-  margin-top: 5%;
+  margin-top: 10%;
   color: black;
 }
 
@@ -623,6 +722,11 @@ footer {
 
 #showRemove:hover, a:active {
   color: #FFD50B;
+}
+
+#showBuyBtn {
+  border: black 2px solid;
+  border-radius: 15px;
 }
 
 /* EDIT */
