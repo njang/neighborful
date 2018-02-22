@@ -571,21 +571,27 @@ footer {
   color: black;
 }
 
+
 #showProduce {
   background-color:rgba(255, 255, 255, 0.5);
   position: relative;
   top: 27.25%;
   left: 22.5%;
   width: 55%;
-  height: 57%;
+  height: 59%;
   border: #FFD50B 2px solid;
   border-radius: 50%;
   box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.5);
 }
 
+.seller {
+  font-size: 30px;
+  color: black;
+}
+
 .showName {
   font-size: 60px;
-  margin-top: 5%;
+  margin-top: 10%;
   color: black;
 }
 
@@ -623,6 +629,11 @@ footer {
 
 #showRemove:hover, a:active {
   color: #FFD50B;
+}
+
+#showBuyBtn {
+  border: black 2px solid;
+  border-radius: 15px;
 }
 
 /* EDIT */
