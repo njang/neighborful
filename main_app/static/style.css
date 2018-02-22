@@ -58,13 +58,13 @@ pink: #EB0401 */
   padding-right: 0px;
   border: black 2px solid;
 }
-tbody tr:nth-child(odd) {
+/*tbody tr:nth-child(odd) {
   background-color: #ff33cc;
 }
 
 tbody tr:nth-child(even) {
   background-color: #e495e4;
-}
+}*/
 
 #hi {
   border: red solid 2px;
