@@ -5,27 +5,24 @@
 {% include "./header.html" %}
 <div id="marketplace" class="container-fluid">
 	<div class="row justify-content-center">
-		<h1 id="marketplaceTitle ">Marketplace</h1>
+		<h1 id="marketplaceTitle">Marketplace</h1>
 	</div>
-	<div class="row">
-		<div id="hi" class="col-6">
-			<form method="GET" action="/search">
-				<input type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
-				<Button type="submit" value="search" class="btn btn-primary">Search!</button>
+	<div class="row justify-content-center">
+		<div class="col-5">
+			<form class="searchForm" method="GET" action="/search">
+				<input class="searchInput" type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
+				<Button id="searchBtn" type="submit" value="search" class="btn btn-primary">Search!</button>
 			</form>
 			<table id="mTbl">
-				<thead>
-					<tr>
-						<th>Produce</th>
-						<th>Credit</th>
-						<th>Available</th>
-						<th>Seller</th>
+					<tr class="mTblHead">
+						<td>Produce</td>
+						<td>Credit</td>
+						<td>Available</td>
+						<td>Seller</td>
 					</tr>
-				</thead>
-				<tbody>
 					{% for produce in produces %}
 					<tr class="mTblRow1">
-						<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
+						<td><a class="produceTbl" href='/{{ produce.id}}'>{{ produce.name }}</a></td>
 						<td>{{ produce.price }}</td>
 						<td>{{ produce.quantity }}</td>
 						<td>
@@ -37,12 +34,13 @@
 						</td>
 					</tr>
 					{% endfor %}
-				</tbody>
 			</table>
 		</div>
+		<div class="emptyMarketplace1"></div>
 		<div id="mapView" class="col-6">
 			{% include "./maps.html" %}
 		</div>
+		<div class="emptyMarketplace"></div>
 	</div>
 </div>
 {% include "./footer.html" %}
