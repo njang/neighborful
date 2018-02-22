@@ -12,6 +12,9 @@ from django.utils import timezone
 from statistics import mean
 
 import os
+import requests
+
+GOOGLE_MAPS_API_URL = 'http://maps.googleapis.com/maps/api/geocode/json'
 
 # Create your views here.
 def index(request):
@@ -83,12 +86,26 @@ def update_address(request):
     form = AddressForm(request.POST)
     if form.is_valid():
         address = form.save(commit = False)
-        # Add Google Maps geocode here
+        # Prepare for Google Maps geocode API
+        params = {
+            'address': address.street,
+            'sensor': 'false',
+            'region': 'us'
+        }
+
+        # Make the request and get the response data
+        req = requests.get(GOOGLE_MAPS_API_URL, params=params)
+        res = req.json()
+
+        # Use the first result
+        result = res['results'][0]
+
+        # Save the result into the address database
         address.user = request.user
-        address.gps_lat = 30.3
-        address.gps_lng = -97.73
+        address.street = result['formatted_address']
+        address.gps_lat = result['geometry']['location']['lat']
+        address.gps_lng = result['geometry']['location']['lng']
         address.save()
-    # Change redirect below to the user profile page
     return HttpResponseRedirect('/')
 
 def delete_post(request, produce_id):
