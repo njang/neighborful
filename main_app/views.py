@@ -158,10 +158,11 @@ def buy_produce(request, produce_id):
 def profile(request, username):
     user = User.objects.get(username=username)
     balance = Balance.objects.get(user=user)
+    address = Address.objects.get(user=user)
     selling = Produce.objects.filter(seller=user).filter(buyer__isnull=True)
     sold = Produce.objects.filter(seller=user).exclude(buyer__isnull=True)
     bought = Produce.objects.filter(buyer=user)
-    return render(request, 'profile.html', {'user': user, 'balance': balance, 'selling': selling, 'bought': bought, 'sold': sold})
+    return render(request, 'profile.html', {'user': user, 'balance': balance, 'address': address, 'selling': selling, 'bought': bought, 'sold': sold})
 
 def login_view(request):
     if request.method == 'POST':
