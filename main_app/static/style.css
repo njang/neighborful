@@ -124,6 +124,7 @@ table tr:last-child td:last-child {
   border-radius: 15px;
   margin-bottom: 50px;
 }
+
 tbody tr:nth-child(odd) {
   background-color: #4280C9;
 }

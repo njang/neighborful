@@ -10,13 +10,12 @@
     <p>Quantity: {{ produce.quantity }}</p>
     {% if produce.seller == user %}
     	<p><a href='/edit/{{produce.id}}'><button class='btn btn-success'>Edit</button></a></p>
-    	<!-- Button to Open the delete confirmation Modal -->
+    	<!-- Button to open the delete confirmation Modal -->
         <p><button class='btn btn-danger' type='button' data-toggle='modal' data-target='#modalDeleteConfirm'>Remove</button></p>
-
 	{% else %}
     	<p>Seller: {{ produce.seller.first_name }}</p>
+        <!-- Button to open the buy confirmation Modal -->
         <p><button class='btn btn-success' data-toggle='modal' data-target='#modalBuyConfirm'>Buy</button></p>
-        <!-- <p><button class='btn btn-success' onclick='JavaScript:alert("Buy function will be enabed soon!")'>Buy</button></p> -->
 	{% endif %}
 
     <!-- The Modal for Buy confirmation -->
@@ -37,7 +36,7 @@
 
           <!-- Modal footer -->
           <div class='modal-footer'>
-            <button type='button' class='btn btn-success' data-dismiss='modal'>Buy</button>
+            <a href='buy/'><button type='button' class='btn btn-success'>Buy</button></a>
             <button type='button' class='btn btn-basic' data-dismiss='modal'>Cancel</button>
           </div>
 
