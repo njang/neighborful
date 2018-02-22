@@ -14,37 +14,31 @@
 				<Button type="submit" value="search" class="btn btn-primary">Search!</button>
 			</form>
 			<table id="mTbl">
-				<thead>
-					<tr>
-						<th>Produce</th>
-						<th>Price</th>
-						<th>Quantity</th>
-						<th>Seller</th>
-						<th>Buyer</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for produce in produces %}
-					<tr class="mTblRow1">
-						<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
-						<td>{{ produce.price }}</td>
-						<td>{{ produce.quantity }}</td>
-						<td>
-							{% if produce.seller == user %}
-								<a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
-							{% else %}
-								{{ produce.seller.first_name }}
-							{% endif %}
-						</td>
-						<td>{{ produce.buyer.first_name }}</td>
-					</tr>
-					{% endfor %}
-				</tbody>
+				<tr>
+					<th>Produce</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Seller</th>
+				</tr>
+				{% for produce in produces %}
+				<tr class="mTblRow1">
+					<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
+					<td>{{ produce.price }}</td>
+					<td>{{ produce.quantity }}</td>
+					<td>
+						{% if produce.seller == user %}
+							<a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
+						{% else %}
+							{{ produce.seller.first_name }}
+						{% endif %}
+					</td>
+				</tr>
+				{% endfor %}
 			</table>
 		</div>
-		<div id="mapView" class="col-6">
+{% comment %}<!-- 		<div id="mapView" class="col-6">
 			{% include "./maps.html" %}
-		</div>
+		</div> -->{% endcomment %}
 	</div>
 </div>
 {% include "./footer.html" %}
