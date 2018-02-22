@@ -242,21 +242,23 @@ thead {
 
 #logoutLink {
   text-decoration: none;
-  color: black;
-  border: #FFD50B 2px solid;
+  color: white;
+  background: #FFD50B;
+  border: black 2px solid;
   border-radius: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 #logoutLink:hover, a:active {
-   color: #FFD50B;
+   color: black;
 }
 
 #loginLink {
   text-decoration: none;
-  color: black;
-  border: #FFD50B 2px solid;
+  color: white;
+  background: #FFD50B;
+  border: black 2px solid;
   border-radius: 50px;
   margin-top: 30px;
   padding-top: 10px;
@@ -264,14 +266,15 @@ thead {
 }
 
 #loginLink:hover, a:active {
-  color: #FFD50B;
+  color: black;
 }
 
 #aboutLink {
   text-decoration: none;
-  color: black;
+  color: white;
   margin-right: 5%;
-  border: #166DD3 2px solid;
+  background: #166DD3;
+  border: black 2px solid;
   border-radius: 50px;
   padding-right: 40px;
   padding-left: 40px;
@@ -280,28 +283,30 @@ thead {
 }
 
 #aboutLink:hover, a:active {
-  color: #166DD3;
+  color: black;
 }
 
 #marketplaceLink {
   text-decoration: none;
-  color: black;
+  color: white;
   margin-left: 5%;
-  border: #438918 2px solid;
+  background: #438918;
+  border: black 2px solid;
   border-radius: 50px;
   padding: 10px;
 }
 
 #marketplaceLink:hover, a:active {
-   color: #438918;
+   color: black;
 }
 
 #homeLink {
   text-decoration: none;
-  color: black;
+  color: white;
   margin-right: 10px;
   margin-left: 10px;
-  border: #EB0401 2px solid;
+  background: #EB0401;
+  border: black 2px solid;
   border-radius: 50px;
   padding-right: 40px;
   padding-left: 40px;
@@ -310,7 +315,7 @@ thead {
 }
 
 #homeLink:hover, a:active {
-   color: #EB0401;
+   color: black;
 }
 
 footer {
