@@ -3,14 +3,14 @@
 
 {% block content %}
 {% include "./header.html" %}
-<h1>Edit</h1>
-
-<form action="update/" method="post" class='form-group'>
-	{% csrf_token %}
-	{{ form.as_p }}
-	<input type="submit" class='btn btn-success' value="Update" />
-</form>
-<a href='/{{produce.id}}'><button class='btn btn-danger'>Cancel</button></a>
+<div id="edit" class="container-fluid full-width">
+	<h1>Edit</h1>
+	<form action="update/" method="post" class='form-group'>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" class='btn btn-success' value="Update" />
+	</form>
+	<a href='/{{produce.id}}'><button class='btn btn-danger'>Cancel</button></a>
+</div>
 {% include "./footer.html" %}
 {% endblock %}
-
