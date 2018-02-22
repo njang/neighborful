@@ -40,7 +40,7 @@ pink: #EB0401 */
 /* marketplace.html */
 /* MARKETPLACE */
 .searchForm {
-  margin-bottom: 20px;
+  margin-bottom: 5%;
   position: relative;
   right: 5%;
 }
@@ -52,13 +52,16 @@ pink: #EB0401 */
   padding: 1%;
   margin-right: 2%;
   color: black;
+  font-size: 20px;
 }
 
 #searchBtn {
   background-color: #FFD50B;
-  color: black;
+  color: white;
+  font-size: 18px;
   border: black solid 2px;
   border-radius: 15px;
+  margin-bottom: 1%;
 }
 
 #marketplace {
@@ -116,11 +119,7 @@ table tr:last-child td:last-child {
 }
 /* MAP */
 #map {
-
-}
-
-#mapView {
-  border: #438918 2px solid;
+  border: #438918 5px solid;
   border-radius: 15px;
   margin-bottom: 50px;
 }
