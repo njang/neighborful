@@ -8,15 +8,15 @@
 	<h1>Edit</h1>
 	<form action="update/" method="post" class='form-group'>
 		{% csrf_token %}
-		<label class="editName" for="id_name">Name:</label>
-		<input class="editNameValue" type="text" name="name" value="" maxlength="100" required="" id="id_name"><br></br>
-		<label class="editPrice" for="id_price">Price:</label>
-		<input class="editPriceNum" type="number" name="price" value="5.00" step="0.01" required="" id="id_price"><br></br>
-		<label class="editQuantity" for="id_quantity">Quantity:</label>
-		<input class="editQuantityNum" type="number" name="quantity" value="3" required="" id="id_quantity"><br></br>
-		<input class="editUpdate" type="submit" class='btn btn-success' value="Update" /><br></br>
+		<label class="editName" for="id_name">Name :</label>
+		<input class="editNameValue" type="text" name="name" value="{{produce.name}}" maxlength="100" required="" id="id_name"><br></br>
+		<label class="editPrice" for="id_price">Price :</label>
+		<input class="editPriceNum" type="number" name="price" value="{{produce.price}}" step="0.01" required="" id="id_price"><br></br>
+		<label class="editQuantity" for="id_quantity">Quantity :</label>
+		<input class="editQuantityNum" type="number" name="quantity" value="{{produce.quantity}}" required="" id="id_quantity"><br></br>
+		<input id="editUpdate" type="submit" class='btn btn-success' value="Update" />
 	</form>
-	<a class="editCancel" href='/{{produce.id}}'><button class='btn btn-danger'>Cancel</button></a>
+	<a href='/{{produce.id}}'><button id="editCancel" class='btn btn-danger'>Cancel</button></a>
 </div>
 </div>
 {% include "./footer.html" %}
