@@ -4,70 +4,69 @@
 {% block content %}
 <div class="container-fluid full-width" id="profile">
   {% include "./header.html" %}
-  <h1>{{ user.first_name }}'s profile</h1>
-  <h2 class="profileBalance">Balance: {{balance.balance}}</h2>
-  <div class="row justify-content-center form-group">
-     <a href='/sell'><button class="btn btn-success col-md-12">Sell Produce</button></a>
+  <h1 class="profileTitle">{{ user.first_name }}'s Profile</h1>
+  <div id="profileMain" class="row justify-content-center form-group">
+     <div class="col-6">
+       <h2 class="profileBalance">Balance: <span class="balance">{{balance.balance}}</span></h2>
+       <a href='/sell'><button id="sellBtn" class="btn btn-success">Sell Produce</button></a>
+  		 <a href='/marketplace'><button id="buyBtn" class="btn btn-primary">Buy Produce</button></a>
+     </div>
+     <div id="currentlySellingTbl" class="col-6">
+       <h3 class="currentlySellingTitle">Selling</h3>
+  		 <table class="" id="profileTbl">
+           <tr class="tblHead">
+             <td>Produce</td>
+    				 <td>Price</td>
+             <td>Quantity</td>
+    	       {% for item in selling %}
+           </tr>
+  	       <tr>
+             <td><a class="produceTbl" href="/{{item.id}}">{{ item.name }}</a></td>
+             <td>{{ item.price }}</td>
+             <td>{{ item.quantity }}</td>
+  	       </tr>
+  				{% endfor %}
+      </table>
+    </div>
+    <div id="currentlySellingTbl" class="col-6">
+       <h3 class="currentlySellingTitle">Sold</h3>
+  		 <table class="" id="profileTbl">
+           <tr class="tblHead">
+             <td>Produce</td>
+    				 <td>Price</td>
+             <td>Quantity</td>
+             <td>Buyer</td>
+    	       {% for item in sold %}
+           </tr>
+  	       <tr>
+             <td>{{ item.name }}</td>
+             <td>{{ item.price }}</td>
+             <td>{{ item.quantity }}</td>
+             <td>{{ item.buyer.first_name }}</td>
+  	       </tr>
+  				{% endfor %}
+      </table>
+    </div>
+    <div id="currentlySellingTbl" class="col-6">
+       <h3 class="currentlySellingTitle">Bought</h3>
+  		 <table class="" id="profileTbl">
+           <tr class="tblHead">
+             <td>Produce</td>
+    				 <td>Price</td>
+             <td>Quantity</td>
+             <td>Seller</td>
+    	       {% for item in bought %}
+           </tr>
+  	       <tr>
+             <td>{{ item.name }}</td>
+             <td>{{ item.price }}</td>
+             <td>{{ item.quantity }}</td>
+             <td>{{ item.seller.first_name }}</td>
+  	       </tr>
+  				{% endfor %}
+      </table>
+    </div>
   </div>
-  <div class="row justify-content-center">
-     <a href='/marketplace'><button class="btn btn-primary col-md-12">Buy Produce</button></a>
-  </div>
-  <div class="row justify-content-center">
-    <h3>Currently selling</h3>
-		<table class="col-md-8 col-s-1" id="profileTbl">
-	     <tr>
-         <th>Produce</th>
-				 <th>Price</th>
-         <th>Quantity</th>
-	     </tr>
-	       {% for item in selling %}
-	       <tr>
-           <td><a href="/{{item.id}}">{{ item.name }}</a></td>
-           <td>{{ item.price }}</td>
-           <td>{{ item.quantity }}</td>
-	       </tr>
-				{% endfor %}
-    </table>
-  </div>
-  <div class="row justify-content-center">
-    <h3>Sold</h3>
-    <table class="col-md-8 col-s-1" id="profileTbl">
-       <tr>
-         <th>Produce</th>
-         <th>Price</th>
-         <th>Quantity</th>
-         <th>Buyer</th>
-       </tr>
-         {% for item in sold %}
-         <tr>
-           <td>{{ item.name }}</td>
-           <td>{{ item.price }}</td>
-           <td>{{ item.quantity }}</td>
-           <td>{{ item.buyer.first_name }}</td>
-         </tr>
-        {% endfor %}
-    </table>
-  </div>
-  <div class="row justify-content-center">
-    <h3>Bought</h3>
-    <table class="col-md-8 col-s-1" id="profileTbl">
-       <tr>
-         <th>Produce</th>
-         <th>Price</th>
-         <th>Quantity</th>
-         <th>Seller</th>
-       </tr>
-         {% for item in bought %}
-         <tr>
-           <td>{{ item.name }}</td>
-           <td>{{ item.price }}</td>
-           <td>{{ item.quantity }}</td>
-           <td>{{ item.seller.first_name }}</td>
-         </tr>
-        {% endfor %}
-    </table>
-  </div>
-</div>
 <!--TC WIP footer showing above table? -->
 {% include "./footer.html" %}
 {% endblock %}

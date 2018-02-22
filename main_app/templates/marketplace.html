@@ -5,40 +5,42 @@
 {% include "./header.html" %}
 <div id="marketplace" class="container-fluid">
 	<div class="row justify-content-center">
-		<h1 id="marketplaceTitle ">Marketplace</h1>
+		<h1 class="title">Marketplace</h1>
 	</div>
-	<div class="row">
-		<div id="hi" class="col-6">
-			<form method="GET" action="/search">
-				<input type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
-				<Button type="submit" value="search" class="btn btn-primary">Search!</button>
+	<div class="row justify-content-center">
+		<div class="col-5">
+			<form class="searchForm" method="GET" action="/search">
+				<input class="searchInput" type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
+				<Button id="searchBtn" type="submit" value="search" class="btn btn-primary">Search!</button>
 			</form>
 			<table id="mTbl">
-				<tr>
-					<th>Produce</th>
-					<th>Price</th>
-					<th>Quantity</th>
-					<th>Seller</th>
-				</tr>
-				{% for produce in produces %}
-				<tr class="mTblRow1">
-					<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
-					<td>{{ produce.price }}</td>
-					<td>{{ produce.quantity }}</td>
-					<td>
-						{% if produce.seller == user %}
-							<a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
-						{% else %}
-							{{ produce.seller.first_name }}
-						{% endif %}
-					</td>
-				</tr>
-				{% endfor %}
+					<tr class="tblHead">
+						<td>Produce</td>
+						<td>Credit</td>
+						<td>Quantity</td>
+						<td>Seller</td>
+					</tr>
+					{% for produce in produces %}
+					<tr class="mTblRow1">
+						<td><a class="produceTbl" href='/{{ produce.id}}'>{{ produce.name }}</a></td>
+						<td>{{ produce.price }}</td>
+						<td>{{ produce.quantity }}</td>
+						<td>
+							{% if produce.seller == user %}
+								<a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
+							{% else %}
+								{{ produce.seller.first_name }}
+							{% endif %}
+						</td>
+					</tr>
+					{% endfor %}
 			</table>
 		</div>
-{% comment %}<!-- 		<div id="mapView" class="col-6">
+		<div class="emptyMarketplace1"></div>
+		<div id="mapView" class="col-6">
 			{% include "./maps.html" %}
-		</div> -->{% endcomment %}
+		</div>
+		<div class="emptyMarketplace"></div>
 	</div>
 </div>
 {% include "./footer.html" %}
