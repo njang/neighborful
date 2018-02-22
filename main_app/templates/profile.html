@@ -12,23 +12,59 @@
 		 <a href='/marketplace'><button class="btn btn-primary col-md-12">Buy Produce</button></a>
   </div>
   <h2 class="profileBalance">My Balance: {{balance.balance}}</h2>
-  <h3>Currently selling</h3>
   <div class="row justify-content-center">
+    <h3>Currently selling</h3>
 		<table class="col-md-8 col-s-1" id="profileTbl">
-	     <thead>
+	     <tr>
          <th>Produce</th>
 				 <th>Price</th>
          <th>Quantity</th>
-	     </thead>
-	     <tbody>
-	       {% for produce in produces %}
+	     </tr>
+	       {% for item in selling %}
 	       <tr>
-           <td><a href="/{{produce.id}}">{{ produce.name }}</a></td>
-           <td>{{ produce.price }}</td>
-           <td>{{ produce.quantity }}</td>
+           <td><a href="/{{item.id}}">{{ item.name }}</a></td>
+           <td>{{ item.price }}</td>
+           <td>{{ item.quantity }}</td>
 	       </tr>
 				{% endfor %}
-	     </tbody>
+    </table>
+  </div>
+  <div class="row justify-content-center">
+    <h3>Sold</h3>
+    <table class="col-md-8 col-s-1" id="profileTbl">
+       <tr>
+         <th>Produce</th>
+         <th>Price</th>
+         <th>Quantity</th>
+         <th>Buyer</th>
+       </tr>
+         {% for item in sold %}
+         <tr>
+           <td>{{ item.name }}</td>
+           <td>{{ item.price }}</td>
+           <td>{{ item.quantity }}</td>
+           <td>{{ item.buyer.first_name }}</td>
+         </tr>
+        {% endfor %}
+    </table>
+  </div>
+  <div class="row justify-content-center">
+    <h3>Bought</h3>
+    <table class="col-md-8 col-s-1" id="profileTbl">
+       <tr>
+         <th>Produce</th>
+         <th>Price</th>
+         <th>Quantity</th>
+         <th>Seller</th>
+       </tr>
+         {% for item in bought %}
+         <tr>
+           <td>{{ item.name }}</td>
+           <td>{{ item.price }}</td>
+           <td>{{ item.quantity }}</td>
+           <td>{{ item.seller.first_name }}</td>
+         </tr>
+        {% endfor %}
     </table>
   </div>
 </div>

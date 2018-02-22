@@ -20,6 +20,7 @@
 						<th>Price</th>
 						<th>Quantity</th>
 						<th>Seller</th>
+						<th>Buyer</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -35,6 +36,7 @@
 								{{ produce.seller.first_name }}
 							{% endif %}
 						</td>
+						<td>{{ produce.buyer.first_name }}</td>
 					</tr>
 					{% endfor %}
 				</tbody>

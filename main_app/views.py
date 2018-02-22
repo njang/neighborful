@@ -21,8 +21,8 @@ def index(request):
 	return render(request, 'index.html')
 
 def marketplace(request):
-    # produces = Produce.objects.filter(buyer__isnull=True)
-	produces = Produce.objects.all()
+    # produces = Produce.objects.filter(buyer__isnull=Fale)
+	produces = Produce.objects.filter(buyer__isnull=True)
 	return render(request, 'marketplace.html', {'produces': produces})
 
 def search(request):
@@ -119,6 +119,7 @@ def post_produce(request):
     if form.is_valid():
         produce = form.save(commit = False)
         produce.seller = request.user
+        # produce.buyer = request.user
         produce.save()
     return HttpResponseRedirect('/marketplace')
 
@@ -154,8 +155,10 @@ def buy_produce(request, produce_id):
 def profile(request, username):
     user = User.objects.get(username=username)
     balance = Balance.objects.get(user=user)
-    produces = Produce.objects.filter(seller=user)
-    return render(request, 'profile.html', {'user': user, 'balance': balance, 'produces': produces})
+    selling = Produce.objects.filter(seller=user).filter(buyer__isnull=True)
+    sold = Produce.objects.filter(seller=user).exclude(buyer__isnull=True)
+    bought = Produce.objects.filter(buyer=user)
+    return render(request, 'profile.html', {'user': user, 'balance': balance, 'selling': selling, 'bought': bought, 'sold': sold})
 
 def login_view(request):
     if request.method == 'POST':
