@@ -156,6 +156,25 @@ tbody tr:nth-child(even) {
   margin-bottom: 5%;
 }
 
+.addressBtn {
+  border: black 2px solid;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-left: 5%;
+  background: #438918;
+  color: white;
+  padding: 2%;
+}
+
+.addressTitle {
+  border-bottom: dotted 5px #438918;
+  display: inline-block;
+}
+
+#addressValue {
+  font-size: 20px;
+}
+
 .balance {
   color: #438918;
 }
