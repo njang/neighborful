@@ -151,6 +151,11 @@ tbody tr:nth-child(even) {
   margin-bottom: 4%;
 }
 
+.address {
+  margin-top: 1.25%;
+  margin-bottom: 5%;
+}
+
 .balance {
   color: #438918;
 }
@@ -165,11 +170,18 @@ tbody tr:nth-child(even) {
   color: black;
   background-color: #FFD50B;
   font-size: 28px;
-  margin: 4%;
+  margin-left: 4%;
+  margin-bottom: 5%;
 }
 
 #buyBtn:hover, a:active {
   color: #EB0401;
+}
+
+#topLeft {
+  width: 90%;
+  height: 90%;
+  padding-right: 7%;
 }
 
 #profileSellBtn {
@@ -178,7 +190,8 @@ tbody tr:nth-child(even) {
   color: black;
   background-color: #FFD50B;
   font-size: 28px;
-  margin: 4%;
+  margin-right: 7%;
+  margin-bottom: 5%;
 }
 
 #profileSellBtn:hover, a:active {
@@ -346,6 +359,7 @@ footer {
 
 #profileMain {
   margin-top: 5%;
+  margin-left: 3.5%;
 }
 
 .profileTitle {
@@ -359,7 +373,19 @@ footer {
   margin: 30px;
 }
 
+#neo {
+  margin-bottom: 2%;
+}
+
+#tess {
+  margin-top: .75%;
+}
+
+#aleena {
+  margin-top: 1.25%;
+}
 .neoTitle {
+
   border-bottom: #166DD3 5px dotted;
   margin-bottom: 15px;
 }
