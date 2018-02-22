@@ -3,17 +3,17 @@
 
 {% block content %}
 {% include "./header.html" %}
-<div id="marketplace" class="container-fluid full-width">
-	<div>
-		<h1>Marketplace</h1>
+<div id="marketplace" class="container-fluid">
+	<div class="row justify-content-center">
+		<h1 id="marketplaceTitle ">Marketplace</h1>
+	</div>
+	<div class="row">
+		<div id="hi" class="col-6">
 		<form method="GET" action="/search">
 			<input type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
 			<Button type="submit" value="search" class="btn btn-primary">Search!</button>
 		</form>
-	</div>
-		<br>
-	<div class="row" id="marketplaceMain">
-		<table style='margin: auto;' id="mTbl" class="col-6">
+		<table id="mTbl">
 			<thead>
 				<tr>
 					<th>Produce</th>
@@ -36,11 +36,10 @@
 						{% endif %}
 					</td>
 				</tr>
-
-
 				{% endfor %}
 			</tbody>
 		</table>
+	</div>
 		<div id="mapView" class="col-6">
 			{% include "./maps.html" %}
 		</div>
