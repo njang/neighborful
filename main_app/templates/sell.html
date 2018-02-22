@@ -4,12 +4,18 @@
 {% block content %}
 {% include "./header.html" %}
 <div class="container-fluid full-width" id="sell">
-	<h1>Sell</h1>
-	<form action="post_url/" method="post">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Sell" />
-	</form>
+	<div class="row justify-content-center">
+		<img id="sellImgLeft" class="col-4" src="../static/images/left.png"></img>
+		<div class="col-4">
+			<h1 class="sellTitle">Sell</h1>
+			<form action="post_url/" method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input class="sellBtn" type="submit" value="Sell" />
+			</form>
+		</div>
+			<img id="sellImgRight" class="col-4" src="../static/images/right.png"></img>
+	</div>
 </div>
 {% include "./footer.html" %}
 {% endblock %}
