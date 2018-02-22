@@ -564,6 +564,14 @@ footer {
   margin-top: 12%;
 }
 
+.icon {
+  width: 35%;
+  position: relative;
+  right:90px;
+  padding-top: 20px;
+
+}
+
 .sellQuantityInput {
   font-size: 20px;
   border: black 2px solid;
