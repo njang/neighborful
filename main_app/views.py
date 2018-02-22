@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 from django.db.models import Q
 from .models import Produce, Address
-from .forms import ProduceForm, LoginForm
+from .forms import ProduceForm, LoginForm, AddressForm
 from django.utils import timezone
 from statistics import mean
 
@@ -74,6 +74,22 @@ def show(request, produce_id):
 def sell_form(request):
     form = ProduceForm()
     return render(request, 'sell.html', {'form': form})
+
+def address_form(request):
+    form = AddressForm()
+    return render(request, 'address.html', {'form': form})
+
+def update_address(request):
+    form = AddressForm(request.POST)
+    if form.is_valid():
+        address = form.save(commit = False)
+        # Add Google Maps geocode here
+        address.user = request.user
+        address.gps_lat = 30.3
+        address.gps_lng = -97.73
+        address.save()
+    # Change redirect below to the user profile page
+    return HttpResponseRedirect('/')
 
 def delete_post(request, produce_id):
     Produce.objects.get(id=produce_id).delete()
