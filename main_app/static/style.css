@@ -3,17 +3,20 @@ body {
     text-align: center;
 }
 
-/* The hero image */
-.hero-image {
-    /* The image used */
-    background: url("/static/images/elaine-casap-86020.jpg");
-    /*background: url("/static/images/elaine-casap-86020.jpg") 50% 0 no-repeat fixed;*/
+/* green: #166DD3
+yellow: #166DD3
+blue: #262454
+pink: #EB0401 */
 
-    /* Set a specific height */
+/* #EB0401 reds
+#166DD3 blue
+#438918 green */
+
+/* INDEX  */
+.hero-image {
+    background: url("/static/images/elaine-casap-86020.jpg");
     height: 480px;
     width: 100%;
-
-    /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,27 +30,70 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.indexTxt {
+  font-size: 100px;
 }
 /*////////////// TABLES  //////////////*/
 /* marketplace.html */
-.mTbl {
+#marketplaceMain {
+
+}
+
+/* MARKETPLACE */
+
+#marketplace {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* MAP */
+#map {
+
+}
+
+#mapView {
+  padding-left: 0px;
+  padding-right: 0px;
+  border: black 2px solid;
+}
+tbody tr:nth-child(odd) {
+  background-color: #ff33cc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e495e4;
+}
+
+#hi {
+  border: red solid 2px;
+}
+
+#mTbl {
   color: black;
   border: black 2px solid;
   table-layout: fixed;
+  height: 500px;
+  width: 717px;
+  position: relative;
+  right: 15px;
 }
+
 /* profile.html */
 #profileTbl {
   color: red;
   border: black 2px solid;
+  border-radius: 15px;
   table-layout: fixed;
 }
 
 td {
-  border: black solid 2px;
+  /* border: red solid 2px; */
 }
 
 th {
-  border: black solid 2px;
+  /* border: black solid 2px; */
 }
 
 thead {
@@ -59,12 +105,245 @@ thead {
   font-size: 50px;
 }
 
-#username {
-  display: flex;
-  flex-direction: column;
+#header {
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 40px;
+  border-bottom: 2px black solid;
+}
+
+.headerTitle {
+  font-size: 60px;
+  margin-bottom: 30px;
 }
 
 #nav {
   display: flex;
   flex-direction: column;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#username {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: black;
+  margin-top: 7px;
+}
+
+#userLink {
+  /* margin-top: 5px; */
+  text-decoration: none;
+  color: black;
+}
+
+#userLink:hover, a:active {
+  color: #FFD50B;
+}
+
+#logoutLink {
+  text-decoration: none;
+  color: black;
+  border: #FFD50B 2px solid;
+  border-radius: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#logoutLink:hover, a:active {
+   color: #FFD50B;
+}
+
+#loginLink {
+  text-decoration: none;
+  color: black;
+  border: #FFD50B 2px solid;
+  border-radius: 50px;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#loginLink:hover, a:active {
+  color: #FFD50B;
+}
+
+#aboutLink {
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+  border: #166DD3 2px solid;
+  border-radius: 50px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#aboutLink:hover, a:active {
+  color: #166DD3;
+}
+
+#marketplaceLink {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+  border: #438918 2px solid;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+#marketplaceLink:hover, a:active {
+   color: #438918;
+}
+
+#homeLink {
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+  margin-left: 10px;
+  border: #EB0401 2px solid;
+  border-radius: 50px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#homeLink:hover, a:active {
+   color: #EB0401;
+}
+
+footer {
+  font-family: 'Poppins', sans-serif;
+  border-top: solid black 2px;
+  /* margin-top: 20px; */
+  padding: 20px;
+}
+
+/* ABOUT PAGE */
+#aboutPpl {
+  justify-content: center;
+}
+
+#about {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container-fluid.full-width {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+}
+
+.aboutTitle {
+  margin: 30px;
+
+}
+
+.neoTitle {
+  border-bottom: #166DD3 5px dotted;
+  margin-bottom: 15px;
+}
+
+.neoGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.neoGithub:hover, a:active {
+  text-decoration: none;
+  color: #166DD3;
+}
+
+.neoLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.neoLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #166DD3;
+}
+
+.tessTitle {
+  border-bottom: #EB0401 5px dotted;
+  margin-bottom: 15px;
+}
+
+.tessGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.tessGithub:hover, a:active {
+  text-decoration: none;
+  color: #EB0401;
+}
+
+.tessLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.tessLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #EB0401;
+}
+
+.aleenaTitle {
+  border-bottom: #438918 5px dotted;
+  margin-bottom: 15px;
+}
+
+.aleenaGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.aleenaGithub:hover, a:active {
+  text-decoration: none;
+  color: #438918;
+}
+
+.aleenaLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.aleenaLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #438918;
+}
+
+/* PROFILE */
+#profile {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SELL */
+#sell {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SEARCH */
+#search {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SHOW */
+#show {
+  font-family: 'Poppins', sans-serif;
 }

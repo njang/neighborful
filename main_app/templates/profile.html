@@ -2,14 +2,14 @@
 {% load staticfiles %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid full-width" id="profile">
   {% include "./header.html" %}
   <h1>{{ user.first_name }}'s profile:</h1>
-  <div class="row justify-content-center">
-	   <a href='/sell'><button class="col-md-12">Sell Produce</button></a>
+  <div class="row justify-content-center form-group">
+	   <a href='/sell'><button class="btn btn-success col-md-12">Sell Produce</button></a>
   </div>
   <div class="row justify-content-center">
-		 <a href='/marketplace'><button class="col-md-12">Buy Produce</button></a>
+		 <a href='/marketplace'><button class="btn btn-primary col-md-12">Buy Produce</button></a>
   </div>
   <h2 class="profileBalance">My Balance: 100</h2>
   <h3>Currently selling</h3>
@@ -17,8 +17,8 @@
 		<table class="col-md-8 col-s-1" id="profileTbl">
 	     <thead>
          <th>Produce</th>
-				 <th>Available</th>
-				 <th>Credit</th>
+				 <th>Price (credits)</th>
+         <th>Quantity</th>
 	     </thead>
 	     <tbody>
 	       {% for produce in produces %}
