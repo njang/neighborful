@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 from django.db.models import Q
-from .models import Produce, Address
+from .models import Produce, Address, Balance
 from .forms import ProduceForm, LoginForm, AddressForm
 from django.utils import timezone
 from statistics import mean
@@ -21,7 +21,8 @@ def index(request):
 	return render(request, 'index.html')
 
 def marketplace(request):
-	produces = Produce.objects.filter(buyer__isnull=True)
+    # produces = Produce.objects.filter(buyer__isnull=True)
+	produces = Produce.objects.all()
 	return render(request, 'marketplace.html', {'produces': produces})
 
 def search(request):
@@ -139,12 +140,22 @@ def buy_produce(request, produce_id):
     produce = Produce.objects.get(id=produce_id)
     produce.buyer = request.user
     produce.save()
+
+    balance = Balance.objects.get(user=produce.seller)
+    balance.balance = balance.balance + produce.price
+    balance.save()
+
+    balance = Balance.objects.get(user=produce.buyer)
+    balance.balance = balance.balance - produce.price
+    balance.save()
+
     return HttpResponseRedirect('/marketplace')
 
 def profile(request, username):
     user = User.objects.get(username=username)
+    balance = Balance.objects.get(user=user)
     produces = Produce.objects.filter(seller=user)
-    return render(request, 'profile.html', {'user': user, 'produces': produces})
+    return render(request, 'profile.html', {'user': user, 'balance': balance, 'produces': produces})
 
 def login_view(request):
     if request.method == 'POST':
