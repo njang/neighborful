@@ -172,7 +172,7 @@ tbody tr:nth-child(even) {
   color: #EB0401;
 }
 
-#sellBtn {
+#profileSellBtn {
   border: black 2px solid;
   border-radius: 15px;
   color: black;
@@ -181,7 +181,7 @@ tbody tr:nth-child(even) {
   margin: 4%;
 }
 
-#sellBtn:hover, a:active {
+#profileSellBtn:hover, a:active {
   color: #EB0401;
 }
 
@@ -269,7 +269,7 @@ thead {
 #aboutLink {
   text-decoration: none;
   color: black;
-  margin-right: 10px;
+  margin-right: 5%;
   border: #166DD3 2px solid;
   border-radius: 50px;
   padding-right: 40px;
@@ -285,7 +285,7 @@ thead {
 #marketplaceLink {
   text-decoration: none;
   color: black;
-  margin-left: 10px;
+  margin-left: 5%;
   border: #438918 2px solid;
   border-radius: 50px;
   padding: 10px;
@@ -451,6 +451,37 @@ footer {
   font-family: 'Poppins', sans-serif;
 }
 
+.sellTitle {
+    margin: 30px;
+    border-bottom: dotted 5px #EB0401;
+}
+
+.sellBtn {
+  border: black 2px solid;
+  border-radius: 15px;
+  color: black;
+  background-color: #FFD50B;
+  font-size: 20px;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 4%;
+}
+
+.sellBtn:hover, a:active {
+  color:#EB0401;
+}
+
+#sellImgLeft {
+  height: 200%;
+  border-right: black 5px solid;
+  padding: 0px;
+}
+
+#sellImgRight {
+  height: 200%;
+  border-left: black 5px solid;
+  padding: 0px;
+}
 /* SEARCH */
 #search {
   font-family: 'Poppins', sans-serif;
