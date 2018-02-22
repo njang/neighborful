@@ -113,7 +113,7 @@ def update_address(request):
         address.gps_lng = result['geometry']['location']['lng']
         address.save()
     return_to = '/'
-    return HttpResponseRedirect('/maps')
+    return HttpResponseRedirect('/marketplace')
 
 def delete_post(request, produce_id):
     Produce.objects.get(id=produce_id).delete()
