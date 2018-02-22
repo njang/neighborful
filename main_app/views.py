@@ -21,9 +21,12 @@ def index(request):
 	return render(request, 'index.html')
 
 def marketplace(request):
-    # produces = Produce.objects.filter(buyer__isnull=Fale)
-	produces = Produce.objects.filter(buyer__isnull=True)
-	return render(request, 'marketplace.html', {'produces': produces})
+    # produces = Produce.objects.filter(buyer__isnull=True).exclude(seller=request.user)
+    produces = Produce.objects.filter(buyer__isnull=True)
+    addresses = Address.objects.all()
+    center_lat = mean(address.gps_lat for address in addresses)
+    center_lng = mean(address.gps_lng for address in addresses)
+    return render(request, 'marketplace.html', {'produces': produces, 'addresses': addresses, 'center_lat': center_lat, 'center_lng': center_lng})
 
 def search(request):
 	today = timezone.now().date()

@@ -11,9 +11,10 @@
 	<script type="text/javascript">
 		let locations = [
 			{% for address in addresses %}
-				['{{address.street}}', {{address.gps_lat}}, {{address.gps_lng}}, {{forloop.counter}}],
+				['<b>{{address.user.first_name}}</b><br>{{address.street}}', {{address.gps_lat}}, {{address.gps_lng}}, {{forloop.counter}}],
 			{% endfor %}
 		]
+		
 		// let locations = [
 		//   ['Shipe Neighborhood Park', 30.307208, -97.727505, 4],
 		//   ['Trinity Church', 30.303034, -97.731454, 5],
@@ -30,7 +31,6 @@
 		//   ['436 Towne Park Trail Austin, TX 78751', 30.301332, -97.729085, 12]
 		//   ['3710 Tom Green St Austin, TX 78705', 30.298852, -97.731458, 13]
 		// ];
-		// console.log('{{key}}')
 
 		let map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 16,
