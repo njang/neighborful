@@ -167,8 +167,9 @@ tbody tr:nth-child(even) {
 }
 
 .addressTitle {
-  border-bottom: dotted 5px #438918;
+  border-bottom: solid 5px #438918;
   display: inline-block;
+  border-radius: 5px;
 }
 
 #addressValue {
@@ -610,7 +611,47 @@ footer {
 #search {
   font-family: 'Poppins', sans-serif;
 }
+.searchResultsTitle {
+  margin-top: 2%;
+  padding-bottom: 1%;
+  border-bottom: dotted 5px #EB0401;
+  display: inline-block;
+  margin-bottom: 2%;
+}
 
+.caption {
+  margin-bottom: 5%;
+}
+
+.searchObjName {
+  font-size: 30px;
+  font-weight: bold;
+  color: #438918;
+}
+
+.searchObjPrice {
+    font-size: 20px;
+}
+
+.searchObjQuantity {
+    font-size: 20px;
+}
+
+.searchObjSeller {
+  font-size: 20px;
+}
+
+.searchObjViewBtn {
+  border: black 2px solid;
+  border-radius: 15px;
+  background: #166DD3;
+  color: white;
+  padding: .5%;
+}
+
+.searchObjViewBtn:hover, a:active {
+  color: black;
+}
 /* SHOW */
 #show {
   font-family: 'Poppins', sans-serif;
@@ -623,7 +664,6 @@ footer {
   position: relative;
   color: black;
 }
-
 
 #showProduce {
   background-color:rgba(255, 255, 255, 0.5);
