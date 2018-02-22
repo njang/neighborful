@@ -3,84 +3,91 @@
 
 {% block content %}
 {% include "./header.html" %}
-<div class="container">
-	<div style="text-align: center";>
-		<h1 style="text-decoration: underline">Marketplace</h1>
-
-		<form method="GET" action="/search">
-			<input type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
-			<Button type="submit" value="search" class="btn btn-primary">Search!</button>
-		</form>
+<div id="marketplace" class="container-fluid">
+	<div class="row justify-content-center">
+		<h1 class="title">Marketplace</h1>
 	</div>
-	<!-- Neo code prevents tbl from showing, thats why table rows 2 - 6 are above 1 -->
-	<br>
-	<table style='margin: auto;' class="mTbl">
-		<thead>
-			<tr>
-<<<<<<< HEAD
-				<th>Produce </th>
-				<th>Available</th>
-=======
-				<th>Produce</th>
->>>>>>> d0e6ebdc99a02a4196d61be41ba675b88d10978f
-				<th>Credit</th>
-				<th>Available</th>
-				<th>Farmer</th>
-			</tr>
-		</thead>
-		<tbody>
-<<<<<<< HEAD
-			<tr class="mTblRow2">
-				<td>Lettuce</td>
-				<td>5 oz</td>
-				<td>3.0</td>
-				<td>Natalie</td>
-			</tr>
-
-			<tr class="mTblRow3">
-				<td>Peppers</td>
-				<td>12 oz</td>
-				<td>3.0</td>
-				<td>Rodrigo</td>
-			</tr>
-			<tr class="mTblRow4">
-				<td>Tomatoes</td>
-				<td>18 oz</td>
-				<td>2.0</td>
-				<td>Graham</td>
-			</tr>
-			<tr class="mTblRow5">
-				<td>Eggplants</td>
-				<td>12 oz</td>
-				<td>1.0</td>
-				<td>Natalie</td>
-			</tr>
-			<tr class="mTblRow6">
-				<td>Watermelon</td>
-				<td>18 oz</td>
-				<td>3.0</td>
-				<td>Masha</td>
-			</tr>
-=======
->>>>>>> dad570c6b4fa6e31cc65ad58db4e56504f054d3a
-			{% for produce in produces %}
-			<tr class="mTblRow1">
-				<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
-				<td>{{ produce.price }}</td>
-				<td>{{ produce.quantity }}</td>
-				<td>
-					{% if produce.seller == user %}
-						<a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
-					{% else %}
-						{{ produce.seller.first_name }}
-					{% endif %}
-				</td>
-			</tr>
-
-
-			{% endfor %}
-		</tbody>
-	</table>
+	<div class="row justify-content-center">
+		<div class="col-5">
+			<form class="searchForm" method="GET" action="/search">
+				<input class="searchInput" type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
+				<Button id="searchBtn" type="submit" value="search" class="btn btn-primary">Search!</button>
+			</form>
+			<table id="mTbl">
+					<tr class="tblHead">
+						<td>Produce</td>
+						<td>Credit</td>
+						<td>Quantity</td>
+						<td>Seller</td>
+					</tr>
+					{% for produce in produces %}
+					<tr class="mTblRow1">
+						<td><a class="produceTbl" href='/{{ produce.id}}'>{{ produce.name }}</a></td>
+						<td>{{ produce.price }}</td>
+						<td>{{ produce.quantity }}</td>
+						<td>
+							{% if produce.seller == user %}
+								<a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
+							{% else %}
+								{{ produce.seller.first_name }}
+							{% endif %}
+						</td>
+					</tr>
+					{% endfor %}
+			</table>
+		</div>
+		<div id="map" class="col-6" style="height: 540px;">
+		</div>
+	</div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
+	<script type="text/javascript">
+		let locations = [
+			{% for address in addresses %}
+				['<b>{{address.user.first_name}}</b><br>{{address.street}}', {{address.gps_lat}}, {{address.gps_lng}}, {{forloop.counter}}],
+			{% endfor %}
+		]
+		// let locations = [
+		//   ['Shipe Neighborhood Park', 30.307208, -97.727505, 4],
+		//   ['Trinity Church', 30.303034, -97.731454, 5],
+		//   ['Hyde Park Montessori', 30.303604, -97.728139, 3],
+		//   ['AHB Community School', 30.303321, -97.731250, 2],
+		//   ['Hyde Park Baptist Church', 30.302583, -97.731817, 1]
+		// 	 ['709 Carolyn Ave Austin, TX 78705', 30.295612, -97.728635, 5],
+		//   ['3305 Duval St Austin, TX 78705', 30.295686, -97.731253, 6],
+		//   ['3704 Greenway St Austin, TX 78705', 30.296519, -97.726924, 7],
+		//   ['3901 Avenue G Austin, TX 78751', 30.300833, -97.730496, 8],
+		//   ['513 E 41st St Austin, TX 78751', 30.301483, -97.726594, 9],
+		//   ['303 E 35th St Austin, TX 78705', 30.298322, -97.732803, 10]
+		//   ['4013 Avenue F Austin, TX 78751', 30.303484, -97.730104, 11]
+		//   ['436 Towne Park Trail Austin, TX 78751', 30.301332, -97.729085, 12]
+		//   ['3710 Tom Green St Austin, TX 78705', 30.298852, -97.731458, 13]
+		// ];
+		// console.log('{{key}}')
+
+		let map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 16,
+			center: new google.maps.LatLng({{center_lat}}, {{center_lng}}),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		});
+
+		let infowindow = new google.maps.InfoWindow();
+
+		let marker, i;
+
+		for (i = 0; i < locations.length; i++) {
+			marker = new google.maps.Marker({
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			map: map
+			});
+
+			google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			return function() {
+			  infowindow.setContent(locations[i][0]);
+			  infowindow.open(map, marker);
+			}
+			})(marker, i));
+		}
+	</script>
 {% include "./footer.html" %}
 {% endblock %}
