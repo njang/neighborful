@@ -38,66 +38,165 @@ pink: #EB0401 */
 }
 /*////////////// TABLES  //////////////*/
 /* marketplace.html */
-#marketplaceMain {
-
+/* MARKETPLACE */
+.searchForm {
+  margin-bottom: 20px;
+  position: relative;
+  right: 5%;
 }
 
-/* MARKETPLACE */
+.searchInput {
+  width: 60%;
+  border: black solid 2px;
+  border-radius: 15px;
+  padding: 1%;
+  margin-right: 2%;
+  color: black;
+}
+
+#searchBtn {
+  background-color: #FFD50B;
+  color: black;
+  border: black solid 2px;
+  border-radius: 15px;
+}
 
 #marketplace {
   font-family: 'Poppins', sans-serif;
 }
 
+#marketplaceTitle {
+  margin: 30px;
+}
+
+.emptyMarketplace {
+  width: 10px;
+}
+
+.emptyMarketplace1 {
+  width: 10px;
+}
+
+#mTbl {
+  color: black;
+  table-layout: fixed;
+  width: 90%;
+  height: 81.5%;
+}
+
+.tblHead {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.produceTbl {
+  color: black;
+  text-decoration: none;
+}
+
+.produceTbl:hover, a:active {
+  color: #EB0401;
+  text-decoration: none;
+}
+
+table tr:first-child td:first-child {
+    border-top-left-radius: 15px;
+}
+
+table tr:first-child td:last-child {
+    border-top-right-radius: 15px;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
 /* MAP */
 #map {
 
 }
 
 #mapView {
-  padding-left: 0px;
-  padding-right: 0px;
-  border: black 2px solid;
+  border: #438918 2px solid;
+  border-radius: 15px;
+  margin-bottom: 50px;
 }
+
 tbody tr:nth-child(odd) {
-  background-color: #ff33cc;
+  background-color: #4280C9;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #e495e4;
-}
-
-#hi {
-  border: red solid 2px;
-}
-
-#mTbl {
-  color: black;
-  border: black 2px solid;
-  table-layout: fixed;
-  height: 500px;
-  width: 717px;
-  position: relative;
-  right: 15px;
+  background-color: #89b0dd;
 }
 
 /* profile.html */
 #profileTbl {
-  color: red;
+  border-radius: 15px;
+  color: black;
+  table-layout: fixed;
+  width: 90%;
+  height: 90%;
+}
+
+.currentlySellingTitle {
+  margin-bottom: 3%;
+  font-weight: bold;
+  margin-right: 10%;
+}
+
+#currentlySellingTbl {
+  margin-bottom: 4%;
+}
+
+.balance {
+  color: #438918;
+}
+
+.profileBalance {
+  margin-bottom: 5%;
+}
+
+#buyBtn {
   border: black 2px solid;
   border-radius: 15px;
-  table-layout: fixed;
+  color: black;
+  background-color: #FFD50B;
+  font-size: 28px;
+  margin: 4%;
+}
+
+#buyBtn:hover, a:active {
+  color: #EB0401;
+}
+
+#sellBtn {
+  border: black 2px solid;
+  border-radius: 15px;
+  color: black;
+  background-color: #FFD50B;
+  font-size: 28px;
+  margin: 4%;
+}
+
+#sellBtn:hover, a:active {
+  color: #EB0401;
 }
 
 td {
-  /* border: red solid 2px; */
+  padding: 15px;
 }
 
 th {
-  /* border: black solid 2px; */
+  border: black solid 2px;
 }
 
 thead {
   font-weight: bold;
+  background-color: blue;
 }
 /*////////////////////////////*/
 /* header.html */
@@ -236,9 +335,24 @@ footer {
     overflow-x: hidden;
 }
 
+.title {
+  margin: 30px;
+  border-bottom: dotted 5px #EB0401;
+}
+
+#profileMain {
+  margin-top: 5%;
+}
+
+.profileTitle {
+  position: relative;
+  top: 30px;
+  display: inline;
+  border-bottom: dotted 5px #EB0401;
+}
+
 .aboutTitle {
   margin: 30px;
-
 }
 
 .neoTitle {
