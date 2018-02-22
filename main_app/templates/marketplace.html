@@ -25,9 +25,9 @@
 						<td><a class="produceTbl" href='/{{ produce.id}}'>{{ produce.name }}</a></td>
 						<td>{{ produce.price }}</td>
 						<td>{{ produce.quantity }}</td>
-						<td>
+						<td class="marketplaceSeller">
 							{% if produce.seller == user %}
-								<a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
+								<a class="marketplaceSeller" href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
 							{% else %}
 								{{ produce.seller.first_name }}
 							{% endif %}
