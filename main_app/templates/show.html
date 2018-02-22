@@ -4,6 +4,7 @@
 {% block content %}
 {% include './header.html' %}
 <div class="container-fluid full-width" id="show">
+  <div id="showProduce">
     <h2>{{ produce.name}}</h1>
     <p>Price: {{ produce.price }}</p>
     <p>Quantity: {{ produce.quantity }}</p>
@@ -69,6 +70,7 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
 {% include './footer.html' %}
 {% endblock %}

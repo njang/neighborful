@@ -490,4 +490,22 @@ footer {
 /* SHOW */
 #show {
   font-family: 'Poppins', sans-serif;
+  height: 600px;
+  width: 800px;
+  background: url("/static/images/heart.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#showProduce {
+  background-color:rgba(255, 255, 255, 0.5);
+  position: relative;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  border: black 2px solid;
+  border-radius: 50%;
 }
