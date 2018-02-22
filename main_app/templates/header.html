@@ -10,7 +10,8 @@
       <div id="nav" class="col-6">
       <h1 class="headerTitle">Neighborful</h1>
       <div>
-        <a id="aboutLink" href='/about'>About</a> | <a id="homeLink" href='/'>Home</a> |
+        <a id="aboutLink" href='/about'>About</a>
+        <a id="homeLink" href='/'>Home</a>
         <a id="marketplaceLink" href='/marketplace'>Marketplace</a>
       </div>
     </div>
@@ -29,15 +30,16 @@
       <div id="nav" class="col-6">
       <h1 class="headerTitle">Neighborful</h1>
         <div>
-          <a href='/about'>About</a> | <a href='/'>Home</a> |
-          <a href='/marketplace'>Marketplace</a>
+          <a id="aboutLink" href='/about'>About</a>
+          <a id="homeLink" href='/'>Home</a>
+          <a id="marketplaceLink" href='/marketplace'>Marketplace</a>
         </div>
       </div>
       <div id="empty" class="col-1">
       </div>
       <div id="username" class="col-2">
           <i class="far fa-user-circle" id="fontAwesome"></i>
-          <a  href="{% url 'login' %}">Login</a>
+          <a  id="loginLink" href="{% url 'login' %}">Login</a>
       </div>
     </div>
     {% endif %}

@@ -3,11 +3,13 @@
 
 {% block content %}
 {% include "./header.html" %}
-<h1>Sell</h1>
-<form action="post_url/" method="post">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<input type="submit" value="Sell" />
-</form>
+<div class="container-fluid full-width" id="sell">
+	<h1>Sell</h1>
+	<form action="post_url/" method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Sell" />
+	</form>
+</div>
 {% include "./footer.html" %}
 {% endblock %}
