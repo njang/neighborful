@@ -4,14 +4,14 @@
 {% block content %}
 <div class="container-fluid full-width" id="profile">
   {% include "./header.html" %}
-  <h1>{{ user.first_name }}'s profile:</h1>
+  <h1>{{ user.first_name }}'s profile</h1>
+  <h2 class="profileBalance">Balance: {{balance.balance}}</h2>
   <div class="row justify-content-center form-group">
-	   <a href='/sell'><button class="btn btn-success col-md-12">Sell Produce</button></a>
+     <a href='/sell'><button class="btn btn-success col-md-12">Sell Produce</button></a>
   </div>
   <div class="row justify-content-center">
-		 <a href='/marketplace'><button class="btn btn-primary col-md-12">Buy Produce</button></a>
+     <a href='/marketplace'><button class="btn btn-primary col-md-12">Buy Produce</button></a>
   </div>
-  <h2 class="profileBalance">My Balance: {{balance.balance}}</h2>
   <div class="row justify-content-center">
     <h3>Currently selling</h3>
 		<table class="col-md-8 col-s-1" id="profileTbl">
