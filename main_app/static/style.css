@@ -615,7 +615,7 @@ footer {
   top: 27.25%;
   left: 22.5%;
   width: 55%;
-  height: 57%;
+  height: 60%;
   border: #FFD50B 2px solid;
   border-radius: 50%;
   box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.5);
@@ -632,6 +632,7 @@ footer {
 }
 
 .editPriceNum {
+  font-size: 20px;
   color: #166DD3;
 }
 
@@ -641,6 +642,7 @@ footer {
 }
 
 .editQuantityNum {
+  font-size: 20px;
   color: #166DD3;
 }
 
@@ -661,6 +663,7 @@ footer {
 #editCancel:hover, a:active {
   color: #FFD50B;
 }
+
 /* green: #166DD3
 yellow #FFD50B;
 blue: #262454
