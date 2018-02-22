@@ -3,17 +3,20 @@ body {
     text-align: center;
 }
 
-/* The hero image */
-.hero-image {
-    /* The image used */
-    background: url("/static/images/elaine-casap-86020.jpg");
-    /*background: url("/static/images/elaine-casap-86020.jpg") 50% 0 no-repeat fixed;*/
+/* green: #166DD3
+yellow: #166DD3
+blue: #262454
+pink: #EB0401 */
 
-    /* Set a specific height */
+/* #EB0401 reds
+#166DD3 blue
+#438918 green */
+
+/* INDEX  */
+.hero-image {
+    background: url("/static/images/elaine-casap-86020.jpg");
     height: 480px;
     width: 100%;
-
-    /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,23 +30,164 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.indexTxt {
+  font-size: 100px;
 }
 /*////////////// TABLES  //////////////*/
 /* marketplace.html */
-.mTbl {
-  color: black;
-  border: black 2px solid;
-  table-layout: fixed;
+/* MARKETPLACE */
+.searchForm {
+  margin-bottom: 20px;
+  position: relative;
+  right: 5%;
 }
+
+.searchInput {
+  width: 60%;
+  border: black solid 2px;
+  border-radius: 15px;
+  padding: 1%;
+  margin-right: 2%;
+  color: black;
+}
+
+#searchBtn {
+  background-color: #FFD50B;
+  color: black;
+  border: black solid 2px;
+  border-radius: 15px;
+}
+
+#marketplace {
+  font-family: 'Poppins', sans-serif;
+}
+
+#marketplaceTitle {
+  margin: 30px;
+}
+
+.emptyMarketplace {
+  width: 10px;
+}
+
+.emptyMarketplace1 {
+  width: 10px;
+}
+
+#mTbl {
+  color: black;
+  table-layout: fixed;
+  width: 90%;
+  height: 81.5%;
+}
+
+.tblHead {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.produceTbl {
+  color: black;
+  text-decoration: none;
+}
+
+.produceTbl:hover, a:active {
+  color: #EB0401;
+  text-decoration: none;
+}
+
+table tr:first-child td:first-child {
+    border-top-left-radius: 15px;
+}
+
+table tr:first-child td:last-child {
+    border-top-right-radius: 15px;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+/* MAP */
+#map {
+
+}
+
+#mapView {
+  border: #438918 2px solid;
+  border-radius: 15px;
+  margin-bottom: 50px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #4280C9;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #89b0dd;
+}
+
 /* profile.html */
 #profileTbl {
-  color: red;
-  border: black 2px solid;
+  border-radius: 15px;
+  color: black;
   table-layout: fixed;
+  width: 90%;
+  height: 90%;
+}
+
+.currentlySellingTitle {
+  margin-bottom: 3%;
+  font-weight: bold;
+  margin-right: 10%;
+}
+
+#currentlySellingTbl {
+  margin-bottom: 4%;
+}
+
+.balance {
+  color: #438918;
+}
+
+.profileBalance {
+  margin-bottom: 5%;
+}
+
+#buyBtn {
+  border: black 2px solid;
+  border-radius: 15px;
+  color: black;
+  background-color: #FFD50B;
+  font-size: 28px;
+  margin: 4%;
+}
+
+#buyBtn:hover, a:active {
+  color: #EB0401;
+}
+
+#profileSellBtn {
+  border: black 2px solid;
+  border-radius: 15px;
+  color: black;
+  background-color: #FFD50B;
+  font-size: 28px;
+  margin: 4%;
+}
+
+#profileSellBtn:hover, a:active {
+  color: #EB0401;
 }
 
 td {
-  border: black solid 2px;
+  padding: 15px;
 }
 
 th {
@@ -52,6 +196,7 @@ th {
 
 thead {
   font-weight: bold;
+  background-color: blue;
 }
 /*////////////////////////////*/
 /* header.html */
@@ -59,12 +204,468 @@ thead {
   font-size: 50px;
 }
 
-#username {
-  display: flex;
-  flex-direction: column;
+#header {
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 40px;
+  border-bottom: 2px black solid;
+}
+
+.headerTitle {
+  font-size: 60px;
+  margin-bottom: 30px;
 }
 
 #nav {
   display: flex;
   flex-direction: column;
+  font-size: 20px;
+  text-decoration: none;
 }
+
+#username {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: black;
+  margin-top: 7px;
+}
+
+#userLink {
+  /* margin-top: 5px; */
+  text-decoration: none;
+  color: black;
+}
+
+#userLink:hover, a:active {
+  color: #FFD50B;
+}
+
+#logoutLink {
+  text-decoration: none;
+  color: black;
+  border: #FFD50B 2px solid;
+  border-radius: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#logoutLink:hover, a:active {
+   color: #FFD50B;
+}
+
+#loginLink {
+  text-decoration: none;
+  color: black;
+  border: #FFD50B 2px solid;
+  border-radius: 50px;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#loginLink:hover, a:active {
+  color: #FFD50B;
+}
+
+#aboutLink {
+  text-decoration: none;
+  color: black;
+  margin-right: 5%;
+  border: #166DD3 2px solid;
+  border-radius: 50px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#aboutLink:hover, a:active {
+  color: #166DD3;
+}
+
+#marketplaceLink {
+  text-decoration: none;
+  color: black;
+  margin-left: 5%;
+  border: #438918 2px solid;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+#marketplaceLink:hover, a:active {
+   color: #438918;
+}
+
+#homeLink {
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+  margin-left: 10px;
+  border: #EB0401 2px solid;
+  border-radius: 50px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#homeLink:hover, a:active {
+   color: #EB0401;
+}
+
+footer {
+  font-family: 'Poppins', sans-serif;
+  border-top: solid black 2px;
+  /* margin-top: 20px; */
+  padding: 20px;
+}
+
+/* ABOUT PAGE */
+#aboutPpl {
+  justify-content: center;
+}
+
+#about {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container-fluid.full-width {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+}
+
+.title {
+  margin: 30px;
+  border-bottom: dotted 5px #EB0401;
+}
+
+#profileMain {
+  margin-top: 5%;
+}
+
+.profileTitle {
+  position: relative;
+  top: 30px;
+  display: inline;
+  border-bottom: dotted 5px #EB0401;
+}
+
+.aboutTitle {
+  margin: 30px;
+}
+
+.neoTitle {
+  border-bottom: #166DD3 5px dotted;
+  margin-bottom: 15px;
+}
+
+.neoGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.neoGithub:hover, a:active {
+  text-decoration: none;
+  color: #166DD3;
+}
+
+.neoLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.neoLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #166DD3;
+}
+
+.tessTitle {
+  border-bottom: #EB0401 5px dotted;
+  margin-bottom: 15px;
+}
+
+.tessGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.tessGithub:hover, a:active {
+  text-decoration: none;
+  color: #EB0401;
+}
+
+.tessLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.tessLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #EB0401;
+}
+
+.aleenaTitle {
+  border-bottom: #438918 5px dotted;
+  margin-bottom: 15px;
+}
+
+.aleenaGithub {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.aleenaGithub:hover, a:active {
+  text-decoration: none;
+  color: #438918;
+}
+
+.aleenaLinkedin {
+  margin-left: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.aleenaLinkedin:hover, a:active {
+  text-decoration: none;
+  color: #438918;
+}
+
+/* PROFILE */
+#profile {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SELL */
+#sell {
+  font-family: 'Poppins', sans-serif;
+}
+
+.sellTitle {
+    margin: 30px;
+    border-bottom: dotted 5px #EB0401;
+    margin-top: 12%;
+}
+
+.sellName {
+  font-size: 20px;
+  margin-right: 2%;
+  margin-top: 12%;
+}
+
+.sellNameInput {
+  font-size: 20px;
+  border: black 2px solid;
+  border-radius: 15px;
+  margin-top: 12%;
+}
+
+.sellPrice {
+  font-size: 20px;
+  margin-right: 2%;
+  margin-top: 12%;
+}
+
+.sellPriceInput {
+  font-size: 20px;
+  border: black 2px solid;
+  border-radius: 15px;
+  margin-top: 12%;
+}
+
+.sellQuantity {
+  font-size: 20px;
+  margin-right: 2%;
+  margin-top: 12%;
+}
+
+.sellQuantityInput {
+  font-size: 20px;
+  border: black 2px solid;
+  border-radius: 15px;
+  margin-top: 12%;
+}
+
+.sellBtn {
+  border: black 2px solid;
+  border-radius: 15px;
+  color: black;
+  background-color: #FFD50B;
+  font-size: 20px;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 4%;
+}
+
+.sellBtn:hover, a:active {
+  color:#EB0401;
+}
+
+#sellImgLeft {
+  height: 200%;
+  border-right: black 5px solid;
+  padding: 0px;
+}
+
+#sellImgRight {
+  height: 200%;
+  border-left: black 5px solid;
+  padding: 0px;
+}
+/* SEARCH */
+#search {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SHOW */
+#show {
+  font-family: 'Poppins', sans-serif;
+  height: 600px;
+  width: 800px;
+  background: url("/static/images/heart.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+
+#showProduce {
+  background-color:rgba(255, 255, 255, 0.5);
+  position: relative;
+  top: 27.25%;
+  left: 22.5%;
+  width: 55%;
+  height: 57%;
+  border: #FFD50B 2px solid;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.5);
+}
+
+.showName {
+  font-size: 60px;
+  margin-top: 5%;
+  color: black;
+}
+
+.showPrice {
+    font-size: 30px;
+    color: black;
+}
+
+.showPriceNum {
+  color: #166DD3;
+}
+
+.showQuantity {
+  font-size: 30px;
+  color: black;
+}
+
+.showQuantityNum {
+  color: #166DD3;
+}
+
+#showEdit {
+  border: black 2px solid;
+  border-radius: 15px;
+}
+
+#showEdit:hover, a:active {
+  color: #FFD50B;
+}
+
+#showRemove {
+  border: black 2px solid;
+  border-radius: 15px;
+}
+
+#showRemove:hover, a:active {
+  color: #FFD50B;
+}
+
+/* EDIT */
+/* SHOW */
+#edit {
+  font-family: 'Poppins', sans-serif;
+  height: 600px;
+  width: 800px;
+  background: url("/static/images/heart.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+
+#editProduce {
+  background-color:rgba(255, 255, 255, 0.5);
+  position: relative;
+  top: 27.25%;
+  left: 22.5%;
+  width: 55%;
+  height: 57%;
+  border: #FFD50B 2px solid;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.5);
+}
+
+.editName {
+  font-size: 30px;
+  color: black;
+}
+
+.editPrice {
+    font-size: 30px;
+    color: black;
+}
+
+.editPriceNum {
+  color: #166DD3;
+}
+
+.editQuantity {
+  font-size: 30px;
+  color: black;
+}
+
+.editQuantityNum {
+  color: #166DD3;
+}
+
+#editUpdate {
+  border: black 2px solid;
+  border-radius: 15px;
+}
+
+#editUpdate:hover, a:active {
+  color: #FFD50B;
+}
+
+#editCancel {
+  border: black 2px solid;
+  border-radius: 15px;
+}
+
+#editCancel:hover, a:active {
+  color: #FFD50B;
+}
+/* green: #166DD3
+yellow #FFD50B;
+blue: #262454
+pink: #EB0401 */
+
+/* #EB0401 reds
+#166DD3 blue
+#438918 green */

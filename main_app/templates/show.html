@@ -3,20 +3,21 @@
 
 {% block content %}
 {% include './header.html' %}
-    <h2>{{ produce.name}}</h1>
-    <p>Price: {{ produce.price }}</p>
-    <p>Quantity: {{ produce.quantity }}</p>
+<div class="container-fluid full-width" id="show">
+  <div id="showProduce">
+    <h2 class="showName">{{ produce.name}}</h1>
+    <p class="showPrice">Price: <span class="showPriceNum">{{ produce.price }}</span></p>
+    <p class="showQuantity">Quantity: <span class="showQuantityNum">{{ produce.quantity }}</span></p>
     {% if produce.seller == user %}
-    	<p><a href='/edit/{{produce.id}}'><button class='btn btn-success'>Edit</button></a></p>
-    	<!-- Button to Open the delete confirmation Modal -->
-        <p><button class='btn btn-danger' type='button' data-toggle='modal' data-target='#modalDeleteConfirm'>Remove</button></p>
-        
+    	<p><a href='/edit/{{produce.id}}'><button id="showEdit" class='btn btn-success'>Edit</button></a></p>
+    	<!-- Button to open the delete confirmation Modal -->
+        <p><button id="showRemove" class='btn btn-danger' type='button' data-toggle='modal' data-target='#modalDeleteConfirm'>Remove</button></p>
 	{% else %}
     	<p>Seller: {{ produce.seller.first_name }}</p>
+        <!-- Button to open the buy confirmation Modal -->
         <p><button class='btn btn-success' data-toggle='modal' data-target='#modalBuyConfirm'>Buy</button></p>
-        <!-- <p><button class='btn btn-success' onclick='JavaScript:alert("Buy function will be enabed soon!")'>Buy</button></p> -->
 	{% endif %}
-    
+
     <!-- The Modal for Buy confirmation -->
     <div class='modal fade' id='modalBuyConfirm'>
       <div class='modal-dialog'>
@@ -35,7 +36,7 @@
 
           <!-- Modal footer -->
           <div class='modal-footer'>
-            <button type='button' class='btn btn-success' data-dismiss='modal'>Buy</button>
+            <a href='buy/'><button type='button' class='btn btn-success'>Buy</button></a>
             <button type='button' class='btn btn-basic' data-dismiss='modal'>Cancel</button>
           </div>
 
@@ -68,5 +69,7 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
 {% include './footer.html' %}
 {% endblock %}

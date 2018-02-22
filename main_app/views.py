@@ -6,19 +6,23 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 from django.db.models import Q
-from .models import Produce, Address
-from .forms import ProduceForm, LoginForm
+from .models import Produce, Address, Balance
+from .forms import ProduceForm, LoginForm, AddressForm
 from django.utils import timezone
 from statistics import mean
 
 import os
+import requests
+
+GOOGLE_MAPS_API_URL = 'http://maps.googleapis.com/maps/api/geocode/json'
 
 # Create your views here.
 def index(request):
 	return render(request, 'index.html')
 
 def marketplace(request):
-	produces = Produce.objects.all()
+    # produces = Produce.objects.filter(buyer__isnull=Fale)
+	produces = Produce.objects.filter(buyer__isnull=True)
 	return render(request, 'marketplace.html', {'produces': produces})
 
 def search(request):
@@ -34,7 +38,7 @@ def search(request):
 				Q(seller__first_name__icontains=query) |
 				Q(seller__last_name__icontains=query)
 				).distinct()
-	paginator = Paginator(queryset_list, 2) # Show 25 contacts per page
+	paginator = Paginator(queryset_list, 3) # Show 25 contacts per page
 	page_request_var = "page"
 	page = request.GET.get(page_request_var)
 	try:
@@ -60,8 +64,9 @@ def maps(request):
     addresses = Address.objects.all()
     center_lat = mean(address.gps_lat for address in addresses)
     center_lng = mean(address.gps_lng for address in addresses)
-    key = os.environ["GOOGLE_MAPS_API_KEY"]
-    return render(request, 'maps.html', {'addresses': addresses, 'center_lat': center_lat, 'center_lng': center_lng, 'key': key})
+    # key = os.environ["GOOGLE_MAPS_API_KEY"]
+    # return render(request, 'maps.html', {'addresses': addresses, 'center_lat': center_lat, 'center_lng': center_lng, 'key': key})
+    return render(request, 'maps.html', {'addresses': addresses, 'center_lat': center_lat, 'center_lng': center_lng})
 
 def about(request):
 	return render(request, 'about.html')
@@ -74,6 +79,37 @@ def sell_form(request):
     form = ProduceForm()
     return render(request, 'sell.html', {'form': form})
 
+def address_form(request):
+    form = AddressForm()
+    return render(request, 'address.html', {'form': form})
+
+def update_address(request):
+    form = AddressForm(request.POST)
+    if form.is_valid():
+        address = form.save(commit = False)
+        # Prepare for Google Maps geocode API
+        params = {
+            'address': address.street,
+            'sensor': 'false',
+            'region': 'us'
+        }
+
+        # Make the request and get the response data
+        req = requests.get(GOOGLE_MAPS_API_URL, params=params)
+        res = req.json()
+
+        # Use the first result
+        result = res['results'][0]
+
+        # Save the result into the address database
+        address.user = request.user
+        address.street = result['formatted_address']
+        address.gps_lat = result['geometry']['location']['lat']
+        address.gps_lng = result['geometry']['location']['lng']
+        address.save()
+    return_to = '/'
+    return HttpResponseRedirect('/maps')
+
 def delete_post(request, produce_id):
     Produce.objects.get(id=produce_id).delete()
     return HttpResponseRedirect('/marketplace')
@@ -83,7 +119,7 @@ def post_produce(request):
     if form.is_valid():
         produce = form.save(commit = False)
         produce.seller = request.user
-        produce.buyer = ''
+        # produce.buyer = request.user
         produce.save()
     return HttpResponseRedirect('/marketplace')
 
@@ -102,18 +138,27 @@ def update_produce(request, produce_id):
     return HttpResponseRedirect('/marketplace')
 
 def buy_produce(request, produce_id):
-    form = ProduceForm(request.POST)
-    if form.is_valid():
-        produce = form.save(commit = False)
-        produce.id = produce_id
-        produce.buyer = request.user
-        produce.save()
+    produce = Produce.objects.get(id=produce_id)
+    produce.buyer = request.user
+    produce.save()
+
+    balance = Balance.objects.get(user=produce.seller)
+    balance.balance = balance.balance + produce.price
+    balance.save()
+
+    balance = Balance.objects.get(user=produce.buyer)
+    balance.balance = balance.balance - produce.price
+    balance.save()
+
     return HttpResponseRedirect('/marketplace')
 
 def profile(request, username):
     user = User.objects.get(username=username)
-    produces = Produce.objects.filter(seller=user)
-    return render(request, 'profile.html', {'user': user, 'produces': produces})
+    balance = Balance.objects.get(user=user)
+    selling = Produce.objects.filter(seller=user).filter(buyer__isnull=True)
+    sold = Produce.objects.filter(seller=user).exclude(buyer__isnull=True)
+    bought = Produce.objects.filter(buyer=user)
+    return render(request, 'profile.html', {'user': user, 'balance': balance, 'selling': selling, 'bought': bought, 'sold': sold})
 
 def login_view(request):
     if request.method == 'POST':
