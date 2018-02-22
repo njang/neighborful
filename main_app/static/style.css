@@ -55,7 +55,7 @@ pink: #EB0401 */
 }
 
 #searchBtn {
-  background-color: yellow;
+  background-color: #FFD50B;
   color: black;
   border: black solid 2px;
   border-radius: 15px;
@@ -79,13 +79,12 @@ pink: #EB0401 */
 
 #mTbl {
   color: black;
-  /* border: black 2px solid; */
   table-layout: fixed;
   width: 90%;
   height: 81.5%;
 }
 
-.mTblHead {
+.tblHead {
   font-size: 20px;
   font-weight: 900;
 }
@@ -135,10 +134,55 @@ tbody tr:nth-child(even) {
 
 /* profile.html */
 #profileTbl {
-  color: red;
+  border-radius: 15px;
+  color: black;
+  table-layout: fixed;
+  width: 90%;
+  height: 90%;
+}
+
+.currentlySellingTitle {
+  margin-bottom: 3%;
+  font-weight: bold;
+  margin-right: 10%;
+}
+
+#currentlySellingTbl {
+  margin-bottom: 4%;
+}
+
+.balance {
+  color: #438918;
+}
+
+.profileBalance {
+  margin-bottom: 5%;
+}
+
+#buyBtn {
   border: black 2px solid;
   border-radius: 15px;
-  table-layout: fixed;
+  color: black;
+  background-color: #FFD50B;
+  font-size: 28px;
+  margin: 4%;
+}
+
+#buyBtn:hover, a:active {
+  color: #EB0401;
+}
+
+#sellBtn {
+  border: black 2px solid;
+  border-radius: 15px;
+  color: black;
+  background-color: #FFD50B;
+  font-size: 28px;
+  margin: 4%;
+}
+
+#sellBtn:hover, a:active {
+  color: #EB0401;
 }
 
 td {
@@ -290,9 +334,24 @@ footer {
     overflow-x: hidden;
 }
 
+.title {
+  margin: 30px;
+  border-bottom: dotted 5px #EB0401;
+}
+
+#profileMain {
+  margin-top: 5%;
+}
+
+.profileTitle {
+  position: relative;
+  top: 30px;
+  display: inline;
+  border-bottom: dotted 5px #EB0401;
+}
+
 .aboutTitle {
   margin: 30px;
-
 }
 
 .neoTitle {
