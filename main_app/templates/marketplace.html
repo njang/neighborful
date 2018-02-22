@@ -11,38 +11,40 @@
 			<Button type="submit" value="search" class="btn btn-primary">Search!</button>
 		</form>
 	</div>
-	<!-- Neo code prevents tbl from showing, thats why table rows 2 - 6 are above 1 -->
 		<br>
-	<div class="row" id="mTbl">
-	<table style='margin: auto;' class="col-6">
-		<thead>
-			<tr>
-				<th>Produce</th>
-				<th>Credit</th>
-				<th>Available</th>
-				<th>Farmer</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for produce in produces %}
-			<tr class="mTblRow1">
-				<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
-				<td>{{ produce.price }}</td>
-				<td>{{ produce.quantity }}</td>
-				<td>
-					{% if produce.seller == user %}
-						<a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
-					{% else %}
-						{{ produce.seller.first_name }}
-					{% endif %}
-				</td>
-			</tr>
+	<div class="row" id="marketplaceMain">
+		<table style='margin: auto;' id="mTbl" class="col-6">
+			<thead>
+				<tr>
+					<th>Produce</th>
+					<th>Credit</th>
+					<th>Available</th>
+					<th>Farmer</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for produce in produces %}
+				<tr class="mTblRow1">
+					<td><a href='/{{ produce.id}}'>{{ produce.name }}</a></td>
+					<td>{{ produce.price }}</td>
+					<td>{{ produce.quantity }}</td>
+					<td>
+						{% if produce.seller == user %}
+							<a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
+						{% else %}
+							{{ produce.seller.first_name }}
+						{% endif %}
+					</td>
+				</tr>
 
 
-			{% endfor %}
-		</tbody>
-	</table>
-	{% include "./maps.html" %}
+				{% endfor %}
+			</tbody>
+		</table>
+		<div id="mapView" class="col-6">
+			{% include "./maps.html" %}
+		</div>
+	</div>
 </div>
 {% include "./footer.html" %}
 {% endblock %}

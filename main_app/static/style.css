@@ -39,6 +39,10 @@ pink: #EB0401 */
 }
 /*////////////// TABLES  //////////////*/
 /* marketplace.html */
+#marketplaceMain {
+  margin-left: 20px;
+  margin-right: 30px;
+}
 
 tbody tr:nth-child(odd) {
   background-color: #ff33cc;
@@ -51,21 +55,23 @@ tbody tr:nth-child(even) {
 #mTbl {
   color: black;
   border: black 2px solid;
+  border-radius: 15px;
   table-layout: fixed;
 }
 /* profile.html */
 #profileTbl {
   color: red;
   border: black 2px solid;
+  border-radius: 15px;
   table-layout: fixed;
 }
 
 td {
-  border: black solid 2px;
+  /* border: red solid 2px; */
 }
 
 th {
-  border: black solid 2px;
+  /* border: black solid 2px; */
 }
 
 thead {
@@ -310,4 +316,11 @@ footer {
 /* SHOW */
 #show {
   font-family: 'Poppins', sans-serif;
+}
+
+/* MAP */
+#map {
+  border: black 2px solid;
+  border-radius: 15px;
+  margin-right: 30px;
 }
