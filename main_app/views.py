@@ -21,9 +21,12 @@ def index(request):
 	return render(request, 'index.html')
 
 def marketplace(request):
-    # produces = Produce.objects.filter(buyer__isnull=Fale)
-	produces = Produce.objects.filter(buyer__isnull=True)
-	return render(request, 'marketplace.html', {'produces': produces})
+    # produces = Produce.objects.filter(buyer__isnull=True).exclude(seller=request.user)
+    produces = Produce.objects.filter(buyer__isnull=True)
+    addresses = Address.objects.all()
+    center_lat = mean(address.gps_lat for address in addresses)
+    center_lng = mean(address.gps_lng for address in addresses)
+    return render(request, 'marketplace.html', {'produces': produces, 'addresses': addresses, 'center_lat': center_lat, 'center_lng': center_lng})
 
 def search(request):
 	today = timezone.now().date()
@@ -157,10 +160,11 @@ def buy_produce(request, produce_id):
 def profile(request, username):
     user = User.objects.get(username=username)
     balance = Balance.objects.get(user=user)
+    address = Address.objects.get(user=user)
     selling = Produce.objects.filter(seller=user).filter(buyer__isnull=True)
     sold = Produce.objects.filter(seller=user).exclude(buyer__isnull=True)
     bought = Produce.objects.filter(buyer=user)
-    return render(request, 'profile.html', {'user': user, 'balance': balance, 'selling': selling, 'bought': bought, 'sold': sold})
+    return render(request, 'profile.html', {'user': user, 'balance': balance, 'address': address, 'selling': selling, 'bought': bought, 'sold': sold})
 
 def login_view(request):
     if request.method == 'POST':
