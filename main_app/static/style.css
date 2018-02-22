@@ -606,7 +606,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  color: white;
+  color: black;
 }
 
 #editProduce {
@@ -626,6 +626,15 @@ footer {
   color: black;
 }
 
+.editNameValue {
+  font-size: 20px;
+  color: #166DD3;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding-left: 5%;
+  width: 200px;
+}
+
 .editPrice {
     font-size: 30px;
     color: black;
@@ -634,6 +643,10 @@ footer {
 .editPriceNum {
   font-size: 20px;
   color: #166DD3;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding-left: 5%;
+  width: auto;
 }
 
 .editQuantity {
@@ -644,11 +657,16 @@ footer {
 .editQuantityNum {
   font-size: 20px;
   color: #166DD3;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding-left: 5%;
+  width: auto;
 }
 
 #editUpdate {
   border: black 2px solid;
   border-radius: 15px;
+  margin-right: 5%;
 }
 
 #editUpdate:hover, a:active {
@@ -658,6 +676,7 @@ footer {
 #editCancel {
   border: black 2px solid;
   border-radius: 15px;
+  margin-left: 5%;
 }
 
 #editCancel:hover, a:active {
