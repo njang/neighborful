@@ -455,6 +455,46 @@ footer {
 .sellTitle {
     margin: 30px;
     border-bottom: dotted 5px #EB0401;
+    margin-top: 12%;
+}
+
+.sellName {
+  font-size: 20px;
+  margin-right: 2%;
+  margin-top: 12%;
+}
+
+.sellNameInput {
+  font-size: 20px;
+  border: black 2px solid;
+  border-radius: 15px;
+  margin-top: 12%;
+}
+
+.sellPrice {
+  font-size: 20px;
+  margin-right: 2%;
+  margin-top: 12%;
+}
+
+.sellPriceInput {
+  font-size: 20px;
+  border: black 2px solid;
+  border-radius: 15px;
+  margin-top: 12%;
+}
+
+.sellQuantity {
+  font-size: 20px;
+  margin-right: 2%;
+  margin-top: 12%;
+}
+
+.sellQuantityInput {
+  font-size: 20px;
+  border: black 2px solid;
+  border-radius: 15px;
+  margin-top: 12%;
 }
 
 .sellBtn {
@@ -498,15 +538,134 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  color: white;
 }
 
 #showProduce {
   background-color:rgba(255, 255, 255, 0.5);
   position: relative;
-  top: 30%;
-  left: 30%;
-  width: 40%;
-  height: 40%;
-  border: black 2px solid;
+  top: 27.25%;
+  left: 22.5%;
+  width: 55%;
+  height: 57%;
+  border: #FFD50B 2px solid;
   border-radius: 50%;
+  box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.5);
 }
+
+.showName {
+  font-size: 60px;
+  margin-top: 5%;
+  color: black;
+}
+
+.showPrice {
+    font-size: 30px;
+    color: black;
+}
+
+.showPriceNum {
+  color: #166DD3;
+}
+
+.showQuantity {
+  font-size: 30px;
+  color: black;
+}
+
+.showQuantityNum {
+  color: #166DD3;
+}
+
+#showEdit {
+  border: black 2px solid;
+  border-radius: 15px;
+}
+
+#showEdit:hover, a:active {
+  color: #FFD50B;
+}
+
+#showRemove {
+  border: black 2px solid;
+  border-radius: 15px;
+}
+
+#showRemove:hover, a:active {
+  color: #FFD50B;
+}
+
+/* EDIT */
+/* SHOW */
+#edit {
+  font-family: 'Poppins', sans-serif;
+  height: 600px;
+  width: 800px;
+  background: url("/static/images/heart.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+
+#editProduce {
+  background-color:rgba(255, 255, 255, 0.5);
+  position: relative;
+  top: 27.25%;
+  left: 22.5%;
+  width: 55%;
+  height: 57%;
+  border: #FFD50B 2px solid;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.5);
+}
+
+.editName {
+  font-size: 30px;
+  color: black;
+}
+
+.editPrice {
+    font-size: 30px;
+    color: black;
+}
+
+.editPriceNum {
+  color: #166DD3;
+}
+
+.editQuantity {
+  font-size: 30px;
+  color: black;
+}
+
+.editQuantityNum {
+  color: #166DD3;
+}
+
+#editUpdate {
+  border: black 2px solid;
+  border-radius: 15px;
+}
+
+#editUpdate:hover, a:active {
+  color: #FFD50B;
+}
+
+#editCancel {
+  border: black 2px solid;
+  border-radius: 15px;
+}
+
+#editCancel:hover, a:active {
+  color: #FFD50B;
+}
+/* green: #166DD3
+yellow #FFD50B;
+blue: #262454
+pink: #EB0401 */
+
+/* #EB0401 reds
+#166DD3 blue
+#438918 green */
