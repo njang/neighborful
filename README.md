@@ -15,15 +15,15 @@ $ python3 manage.py runserver
 
 ## Technologies
 
--[Django](https://www.djangoproject.com/) - A web framework, written in Python, which follows the model-view-template architectural pattern.
+- [Django](https://www.djangoproject.com/) - A web framework, written in Python, which follows the model-view-template architectural pattern.
 
--[Python](https://www.python.org/) - An interpreted high-level programming language for general-purpose programming.
+- [Python](https://www.python.org/) - An interpreted high-level programming language for general-purpose programming.
 
 - [CSS3](http://www.css3.info/) - Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language.
 
 - [Bootstrap4](https://getbootstrap.com/) - A front-end library for designing websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions.
 
--[Google Maps API](https://developers.google.com/maps/) - An API used for displaying map data on web applications.
+- [Google Maps API](https://developers.google.com/maps/) - An API used for displaying map data on web applications.
 
 ## Minimum Viable Product
 
