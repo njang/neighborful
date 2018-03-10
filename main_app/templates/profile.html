@@ -10,7 +10,7 @@
        <div class="address">
          <h2 class="addressTitle">Address</h2>
           {% if address.gps_lat != 0%}
-           <button class="addressBtn">Edit</button>
+           <a href="/address/"><button class="addressBtn">Edit</button></a>
            {% else %}
            <button class="addressBtn">Add</button>
           {% endif %}
