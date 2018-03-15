@@ -10,7 +10,7 @@
 	<div class="row justify-content-center">
 		<div class="col-5">
 			<form class="searchForm" method="GET" action="/search">
-				<input class="searchInput" type= "text" name="q" placeholder="Search By Name..." value="{{ request.GET.q }}"/>
+				<input class="searchInput" type= "text" name="q" placeholder="Search By Produce, Seller, or Quantity..." style="font-size: 15px" value="{{ request.GET.q }}"/>
 				<Button id="searchBtn" type="submit" value="search" class="btn btn-primary">Search!</button>
 			</form>
 			<table id="mTbl">
@@ -25,9 +25,9 @@
 						<td><a class="produceTbl" href='/{{ produce.id}}'>{{ produce.name }}</a></td>
 						<td>{{ produce.price }}</td>
 						<td>{{ produce.quantity }}</td>
-						<td>
+						<td class="marketplaceSeller">
 							{% if produce.seller == user %}
-								<a href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
+								<a class="marketplaceSeller" href='/user/{{ produce.seller.username }}'>{{ produce.seller.first_name }}</a>
 							{% else %}
 								{{ produce.seller.first_name }}
 							{% endif %}
@@ -40,7 +40,7 @@
 		</div>
 	</div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJZSND0Ks8y1QZLllZCo_wDRw2po-ei9k" type="text/javascript"></script>
 	<script type="text/javascript">
 		let locations = [
 			{% for address in addresses %}

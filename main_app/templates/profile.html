@@ -6,20 +6,20 @@
   {% include "./header.html" %}
   <h1 class="profileTitle">{{ user.first_name }}'s Profile</h1>
   <div id="profileMain" class="row justify-content-center form-group">
-     <div class="col-6">
-       <h2>Address 
-        {% if address.gps_lat != 0%}
-         <button>Edit</button>
-         {% else %}
-         <button>Add</button>
+     <div id="topLeft" class="col-6">
+       <div class="address">
+         <h2 class="addressTitle">Address</h2>
+          {% if address.gps_lat != 0%}
+           <a href="/address/"><button class="addressBtn">Edit</button></a>
+           {% else %}
+           <button class="addressBtn">Add</button>
+          {% endif %}
+          {% if address.gps_lat != 0%}<br></br>
+         <span id="addressValue" class="h2">{{address.street}}</span>
+           {% else %}
+         <span class="h2">--</span>
         {% endif %}
-       </h2>
-        {% if address.gps_lat != 0%}
-       <span class="h2">{{address.street}}</span>
-         {% else %}
-       <span class="h2">--</span>
-        {% endif %}
-
+      </div>
        <h2 class="profileBalance">Balance : <span class="balance">{{balance.balance}}</span></h2>
        <a href='/sell'><button id="profileSellBtn" class="btn btn-success">Sell Produce</button></a>
   		 <a href='/marketplace'><button id="buyBtn" class="btn btn-primary">Buy Produce</button></a>

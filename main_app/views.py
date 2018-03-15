@@ -39,7 +39,9 @@ def search(request):
 		queryset_list = queryset_list.filter(
 				Q(name__icontains=query)|
 				Q(seller__first_name__icontains=query) |
-				Q(seller__last_name__icontains=query)
+				Q(seller__last_name__icontains=query) |
+				Q(quantity__icontains=query) 
+
 				).distinct()
 	paginator = Paginator(queryset_list, 3) # Show 25 contacts per page
 	page_request_var = "page"
@@ -111,7 +113,7 @@ def update_address(request):
         address.gps_lng = result['geometry']['location']['lng']
         address.save()
     return_to = '/'
-    return HttpResponseRedirect('/maps')
+    return HttpResponseRedirect('/marketplace')
 
 def delete_post(request, produce_id):
     Produce.objects.get(id=produce_id).delete()
